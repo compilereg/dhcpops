@@ -1,3 +1,5 @@
+/*
+ * A Sample main class uses the library
 import java.io.IOException;
 
 import com.google.gson.Gson;
@@ -25,6 +27,7 @@ public class Starter {
 	
 	}
 }
+*/
 /*
  * To add a new rule
  * 	1-Add the rule in the .g4 file

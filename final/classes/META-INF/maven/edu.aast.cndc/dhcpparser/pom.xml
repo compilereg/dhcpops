@@ -41,7 +41,10 @@
   </dependencies>
 
   <build>
-
+  
+  
+  <directory>${project.basedir}/final</directory>
+    
     <plugins>
     
     <plugin>
@@ -74,10 +77,8 @@
 	                        <target>
 	                        	<mkdir dir="${dhcpdparser.tmpbuildpackagefilename}"/>
 	                        	<mkdir dir="${dhcpdparser.tmppackagefilename}"/>
-	                        	
-	                            <copy file="${project.basedir}/target/dhcpparser-1.0.jar"
+	                            <copy file="${project.basedir}/final/dhcpd-1.0.jar"
 	                                  todir="${dhcpdparser.tmppackagefilename}/"/>
-									
 								<delete dir="${buildpath_temp}"/>
 	                        </target>
 	                    </configuration>
@@ -127,7 +128,7 @@
 		    </execution>
 		  </executions>
 		</plugin>
-	-->																																													
+	-->
     </plugins>
   </build>
      

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <mkdir dir="/tmp/dhcpdparser-build" />
+    <mkdir dir="/tmp/dhcpdparser-build/dhcpdparser" />
+    <copy file="/home/compiler/git/dhcpparser-dev/final/dhcpd-1.0.jar" todir="/tmp/dhcpdparser-build/dhcpdparser/" />
+    <delete dir="${buildpath_temp}" />
+  </target>
+</project>

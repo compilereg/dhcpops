@@ -1,0 +1,7 @@
+dhcpparser/DirectivesTest.class
+dhcpparser/DHCPConfigTest.class
+dhcpparser/HostBlockJSONGeneration.class
+dhcpparser/HostBlockListTest.class
+dhcpparser/SubnetBlockListTest.class
+dhcpparser/HostBlockTest.class
+dhcpparser/DHCPConfigurationParserTest.class

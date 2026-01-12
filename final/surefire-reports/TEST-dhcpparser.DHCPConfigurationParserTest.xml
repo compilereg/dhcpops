@@ -1,0 +1,3839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="dhcpparser.DHCPConfigurationParserTest" time="0.177" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/compiler/git/dhcpparser-dev/final/test-classes:/home/compiler/git/dhcpparser-dev/final/classes:/home/compiler/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.3/junit-jupiter-5.11.3.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.3/junit-jupiter-api-5.11.3.jar:/home/compiler/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/compiler/.m2/repository/org/junit/platform/junit-platform-commons/1.11.3/junit-platform-commons-1.11.3.jar:/home/compiler/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.3/junit-jupiter-params-5.11.3.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.3/junit-jupiter-engine-5.11.3.jar:/home/compiler/.m2/repository/org/junit/platform/junit-platform-engine/1.11.3/junit-platform-engine-1.11.3.jar:/home/compiler/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/compiler/git/dhcpparser-dev/final/surefire/surefirebooter-20260113001440779_3.jar /home/compiler/git/dhcpparser-dev/final/surefire 2026-01-13T00-14-40_695-jvmRun1 surefire-20260113001440779_1tmp surefire_0-20260113001440779_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/compiler/git/dhcpparser-dev/final/test-classes:/home/compiler/git/dhcpparser-dev/final/classes:/home/compiler/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.3/junit-jupiter-5.11.3.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.3/junit-jupiter-api-5.11.3.jar:/home/compiler/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/compiler/.m2/repository/org/junit/platform/junit-platform-commons/1.11.3/junit-platform-commons-1.11.3.jar:/home/compiler/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.3/junit-jupiter-params-5.11.3.jar:/home/compiler/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.3/junit-jupiter-engine-5.11.3.jar:/home/compiler/.m2/repository/org/junit/platform/junit-platform-engine/1.11.3/junit-platform-engine-1.11.3.jar:/home/compiler/.m2/repository/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/compiler"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/compiler/git/dhcpparser-dev"/>
+    <property name="style.color" value="always"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/home/compiler/git/dhcpparser-dev/final/surefire/surefirebooter-20260113001440779_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.9+10-Ubuntu-122.04"/>
+    <property name="user.name" value="compiler"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.8.0-90-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/compiler/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.9"/>
+    <property name="user.dir" value="/home/compiler/git/dhcpparser-dev"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.9+10-Ubuntu-122.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="GenerateJSONFromDHCPFile" classname="dhcpparser.DHCPConfigurationParserTest" time="0.175">
+    <system-out><![CDATA[{
+  "Global_Direcives": {
+    "Directives_List": {
+      "allow": "bootp",
+      "default-lease-time": "604800",
+      "log-facility": "local7",
+      "authoritative": ";",
+      "update-static-leases": "on",
+      "max-lease-time": "604800"
+    }
+  },
+  "Hosts": {
+    "Hosts_List": [
+      {
+        "HostName": "rootaca",
+        "MAC_Address": "00:50:56:b1:6e:ba",
+        "IP_Address": "10.0.3.3",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "rootca"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "rootca"
+          }
+        }
+      },
+      {
+        "HostName": "activedir",
+        "MAC_Address": "00:50:56:b1:ab:f4",
+        "IP_Address": "10.0.3.8",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "activedir"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "activedir"
+          }
+        }
+      },
+      {
+        "HostName": "clockqmgr",
+        "MAC_Address": "00:50:56:b1:03:1d",
+        "IP_Address": "10.0.3.5",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "clockqmgr"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "clockqmgr"
+          }
+        }
+      },
+      {
+        "HostName": "rabbitmq",
+        "MAC_Address": "00:50:56:b1:25:b7",
+        "IP_Address": "10.0.3.6",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "rabbitmq"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "rabbitmq"
+          }
+        }
+      },
+      {
+        "HostName": "vpn",
+        "MAC_Address": "00:50:56:b1:87:52",
+        "IP_Address": "10.0.3.100",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "vpn"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "vpn"
+          }
+        }
+      },
+      {
+        "HostName": "vpn1",
+        "MAC_Address": "00:50:56:b1:08:9c",
+        "IP_Address": "10.0.3.101",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "vpn1"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "vpn1"
+          }
+        }
+      },
+      {
+        "HostName": "nageous",
+        "MAC_Address": "00:50:56:b1:88:7e",
+        "IP_Address": "10.0.3.10",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "nageous"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "nageous"
+          }
+        }
+      },
+      {
+        "HostName": "radius",
+        "MAC_Address": "00:0c:29:0a:c7:cf",
+        "IP_Address": "10.0.3.102",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "radiuus"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "radius"
+          }
+        }
+      },
+      {
+        "HostName": "judge1",
+        "MAC_Address": "10:62:e5:16:54:53",
+        "IP_Address": "10.0.2.2",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge1"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge1"
+          }
+        }
+      },
+      {
+        "HostName": "voip",
+        "MAC_Address": "00:0c:29:0a:c7:cf",
+        "IP_Address": "10.0.3.102",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "radiuus"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "radius"
+          }
+        }
+      },
+      {
+        "HostName": "nfsAcpc",
+        "MAC_Address": "00:50:56:bf:62:10",
+        "IP_Address": "10.0.3.7",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "nfsAcpc"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "nfsAcpc"
+          }
+        }
+      },
+      {
+        "HostName": "team1",
+        "MAC_Address": "f4:39:09:20:55:f9",
+        "IP_Address": "10.0.3.253",
+        "Options_List": {
+          "Options": {
+            "domain-name": "directory.local",
+            "host-name": "team1",
+            "domain-search": "directory.local"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1"
+          }
+        }
+      },
+      {
+        "HostName": "eventfeederM",
+        "MAC_Address": "00:50:56:b1:3f:c5",
+        "IP_Address": "10.0.3.20",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "eventfeederM"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "eventfeederM"
+          }
+        }
+      },
+      {
+        "HostName": "eventfeederT",
+        "MAC_Address": "00:50:56:b1:62:46",
+        "IP_Address": "10.0.3.21",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "eventfeederT"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "eventfeederT"
+          }
+        }
+      },
+      {
+        "HostName": "K8sMaster1-3",
+        "MAC_Address": "00:50:56:bf:c3:19",
+        "IP_Address": "10.0.3.150",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "K8sMaster1-3"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "K8sMaster1-3"
+          }
+        }
+      },
+      {
+        "HostName": "K8sMaster2-5",
+        "MAC_Address": "00:50:56:bf:7c:e8",
+        "IP_Address": "10.0.3.151",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "K8sMaster2-5"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "K8sMaster2-5"
+          }
+        }
+      },
+      {
+        "HostName": "worker1-5",
+        "MAC_Address": "00:50:56:bf:ab:69",
+        "IP_Address": "10.0.3.156",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "worker1-5"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "worker1-5"
+          }
+        }
+      },
+      {
+        "HostName": "worker2-5",
+        "MAC_Address": "00:50:56:bf:54:75",
+        "IP_Address": "10.0.3.157",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "worker2-5"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "worker2-5"
+          }
+        }
+      },
+      {
+        "HostName": "worker1-3",
+        "MAC_Address": "00:50:56:bf:83:47",
+        "IP_Address": "10.0.3.154",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "worker1-3"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "worker1-3"
+          }
+        }
+      },
+      {
+        "HostName": "worker2-3",
+        "MAC_Address": "00:50:56:bf:41:cf",
+        "IP_Address": "10.0.3.155",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "worker2-3"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "worker2-3"
+          }
+        }
+      },
+      {
+        "HostName": "domserver",
+        "MAC_Address": "00:50:56:bf:3e:d1",
+        "IP_Address": "10.0.3.9",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "domserver"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "domserver"
+          }
+        }
+      },
+      {
+        "HostName": "judge2",
+        "MAC_Address": "10:e7:c6:08:da:ea",
+        "IP_Address": "10.0.2.3",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge2"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge2"
+          }
+        }
+      },
+      {
+        "HostName": "judge3",
+        "MAC_Address": "ac:e2:d3:00:ba:7d",
+        "IP_Address": "10.0.2.4",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge3"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge3"
+          }
+        }
+      },
+      {
+        "HostName": "judge4",
+        "MAC_Address": "f4:39:09:27:8d:f2",
+        "IP_Address": "10.0.2.5",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge4"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge4"
+          }
+        }
+      },
+      {
+        "HostName": "judge5",
+        "MAC_Address": "98:e7:f4:bb:eb:83",
+        "IP_Address": "10.0.2.6",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge5"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge5"
+          }
+        }
+      },
+      {
+        "HostName": "judge6",
+        "MAC_Address": "98:e7:f4:bc:64:b3",
+        "IP_Address": "10.0.2.7",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge6"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge6"
+          }
+        }
+      },
+      {
+        "HostName": "judge7",
+        "MAC_Address": "f4:39:09:24:cd:66",
+        "IP_Address": "10.0.2.8",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge7"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge7"
+          }
+        }
+      },
+      {
+        "HostName": "judge8",
+        "MAC_Address": "10:62:e5:16:cf:c5",
+        "IP_Address": "10.0.2.9",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge8"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge8"
+          }
+        }
+      },
+      {
+        "HostName": "judge9",
+        "MAC_Address": "f4:39:09:20:54:bb",
+        "IP_Address": "10.0.2.10",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge9"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge9"
+          }
+        }
+      },
+      {
+        "HostName": "judge10",
+        "MAC_Address": "10:62:e5:00:bf:1d",
+        "IP_Address": "10.0.2.11",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge10"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge10"
+          }
+        }
+      },
+      {
+        "HostName": "judge11",
+        "MAC_Address": "ac:e2:d3:03:78:a6",
+        "IP_Address": "10.0.2.12",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge11"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge11"
+          }
+        }
+      },
+      {
+        "HostName": "judge12",
+        "MAC_Address": "10:e7:c6:16:9a:7f",
+        "IP_Address": "10.0.2.13",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "judge12"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "judge12"
+          }
+        }
+      },
+      {
+        "HostName": "domjudge1",
+        "MAC_Address": "f4:39:09:20:55:ab",
+        "IP_Address": "10.0.2.14",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "domjudge1"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "domjudge1"
+          }
+        }
+      },
+      {
+        "HostName": "domjudge2",
+        "MAC_Address": "98:e7:f4:bc:64:b6",
+        "IP_Address": "10.0.2.15",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "domjudge2"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "domjudge2"
+          }
+        }
+      },
+      {
+        "HostName": "domjudge3",
+        "MAC_Address": "10:62:e5:16:cf:6d",
+        "IP_Address": "10.0.2.16",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "domjudge3"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "domjudge3"
+          }
+        }
+      },
+      {
+        "HostName": "domjudge4",
+        "MAC_Address": "10:e7:c6:16:d0:94",
+        "IP_Address": "10.0.2.17",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "domjudge4"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "domjudge4"
+          }
+        }
+      },
+      {
+        "HostName": "team1001",
+        "MAC_Address": "f4:39:09:27:8d:69",
+        "IP_Address": "10.0.100.11",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1001"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1001"
+          }
+        }
+      },
+      {
+        "HostName": "team1002",
+        "MAC_Address": "10:62:e5:10:53:43",
+        "IP_Address": "10.0.100.12",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1002"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1002"
+          }
+        }
+      },
+      {
+        "HostName": "team1003",
+        "MAC_Address": "18:60:24:26:bd:8a",
+        "IP_Address": "10.0.100.13",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1003"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1003"
+          }
+        }
+      },
+      {
+        "HostName": "team1004",
+        "MAC_Address": "ac:e2:d3:06:23:07",
+        "IP_Address": "10.0.100.14",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1004"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1004"
+          }
+        }
+      },
+      {
+        "HostName": "team1005",
+        "MAC_Address": "10:62:e5:11:7c:75",
+        "IP_Address": "10.0.100.15",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1005"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1005"
+          }
+        }
+      },
+      {
+        "HostName": "team1006",
+        "MAC_Address": "10:62:e5:16:cf:96",
+        "IP_Address": "10.0.100.16",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1006"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1006"
+          }
+        }
+      },
+      {
+        "HostName": "team1007",
+        "MAC_Address": "18:60:24:26:f4:0a",
+        "IP_Address": "10.0.100.17",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1007"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1007"
+          }
+        }
+      },
+      {
+        "HostName": "team1008",
+        "MAC_Address": "10:62:e5:16:cc:48",
+        "IP_Address": "10.0.100.18",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1008"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1008"
+          }
+        }
+      },
+      {
+        "HostName": "team1009",
+        "MAC_Address": "10:e7:c6:13:79:51",
+        "IP_Address": "10.0.100.19",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1009"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1009"
+          }
+        }
+      },
+      {
+        "HostName": "team1010",
+        "MAC_Address": "18:60:24:24:22:ab",
+        "IP_Address": "10.0.100.20",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1010"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1010"
+          }
+        }
+      },
+      {
+        "HostName": "team1011",
+        "MAC_Address": "98:e7:f4:bc:23:3a",
+        "IP_Address": "10.0.100.21",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1011"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1011"
+          }
+        }
+      },
+      {
+        "HostName": "team1012",
+        "MAC_Address": "18:60:24:26:fc:8b",
+        "IP_Address": "10.0.100.22",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1012"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1012"
+          }
+        }
+      },
+      {
+        "HostName": "team1013",
+        "MAC_Address": "98:e7:f4:bc:13:42",
+        "IP_Address": "10.0.100.23",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1013"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1013"
+          }
+        }
+      },
+      {
+        "HostName": "team1014",
+        "MAC_Address": "ac:e2:d3:17:11:8f",
+        "IP_Address": "10.0.100.24",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1014"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1014"
+          }
+        }
+      },
+      {
+        "HostName": "team1015",
+        "MAC_Address": "10:62:e5:19:c9:ed",
+        "IP_Address": "10.0.100.25",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1015"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1015"
+          }
+        }
+      },
+      {
+        "HostName": "team1016",
+        "MAC_Address": "f4:39:09:20:55:3c",
+        "IP_Address": "10.0.100.26",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1016"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1016"
+          }
+        }
+      },
+      {
+        "HostName": "team1017",
+        "MAC_Address": "10:62:e5:16:d0:0b",
+        "IP_Address": "10.0.100.27",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1017"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1017"
+          }
+        }
+      },
+      {
+        "HostName": "team1018",
+        "MAC_Address": "c4:65:16:3c:12:9f",
+        "IP_Address": "10.0.100.28",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1018"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1018"
+          }
+        }
+      },
+      {
+        "HostName": "team1019",
+        "MAC_Address": "10:e7:c6:07:f8:0a",
+        "IP_Address": "10.0.100.29",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1019"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1019"
+          }
+        }
+      },
+      {
+        "HostName": "team1020",
+        "MAC_Address": "98:e7:f4:bd:44:db",
+        "IP_Address": "10.0.100.30",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1020"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1020"
+          }
+        }
+      },
+      {
+        "HostName": "team1021",
+        "MAC_Address": "98:e7:f4:bb:df:51",
+        "IP_Address": "10.0.100.31",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1021"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1021"
+          }
+        }
+      },
+      {
+        "HostName": "team1022",
+        "MAC_Address": "f4:39:09:20:54:b8",
+        "IP_Address": "10.0.100.32",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1022"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1022"
+          }
+        }
+      },
+      {
+        "HostName": "team1023",
+        "MAC_Address": "10:e7:c6:02:9a:5d",
+        "IP_Address": "10.0.100.33",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1023"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1023"
+          }
+        }
+      },
+      {
+        "HostName": "team1024",
+        "MAC_Address": "10:e7:c6:0b:2a:55",
+        "IP_Address": "10.0.100.34",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1024"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1024"
+          }
+        }
+      },
+      {
+        "HostName": "team1025",
+        "MAC_Address": "10:e7:c6:05:87:ba",
+        "IP_Address": "10.0.100.35",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1025"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1025"
+          }
+        }
+      },
+      {
+        "HostName": "team1026",
+        "MAC_Address": "18:60:24:22:73:d3",
+        "IP_Address": "10.0.100.36",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1026"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1026"
+          }
+        }
+      },
+      {
+        "HostName": "team1027",
+        "MAC_Address": "10:62:e5:16:cf:13",
+        "IP_Address": "10.0.100.37",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1027"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1027"
+          }
+        }
+      },
+      {
+        "HostName": "team1028",
+        "MAC_Address": "ac:e2:d3:06:63:46",
+        "IP_Address": "10.0.100.38",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1028"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1028"
+          }
+        }
+      },
+      {
+        "HostName": "team1029",
+        "MAC_Address": "10:e7:c6:0f:56:64",
+        "IP_Address": "10.0.100.39",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1029"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1029"
+          }
+        }
+      },
+      {
+        "HostName": "team1030",
+        "MAC_Address": "f4:39:09:24:1d:ba",
+        "IP_Address": "10.0.100.40",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1030"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1030"
+          }
+        }
+      },
+      {
+        "HostName": "team1031",
+        "MAC_Address": "18:60:24:23:44:b2",
+        "IP_Address": "10.0.100.41",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1031"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1031"
+          }
+        }
+      },
+      {
+        "HostName": "team1032",
+        "MAC_Address": "10:62:e5:19:c8:c9",
+        "IP_Address": "10.0.100.42",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1032"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1032"
+          }
+        }
+      },
+      {
+        "HostName": "team1033",
+        "MAC_Address": "f4:39:09:44:9b:a4",
+        "IP_Address": "10.0.100.43",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1033"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1033"
+          }
+        }
+      },
+      {
+        "HostName": "team1034",
+        "MAC_Address": "f4:39:09:25:8a:41",
+        "IP_Address": "10.0.100.44",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1034"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1034"
+          }
+        }
+      },
+      {
+        "HostName": "team1035",
+        "MAC_Address": "f4:39:09:25:8a:6e",
+        "IP_Address": "10.0.100.45",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1035"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1035"
+          }
+        }
+      },
+      {
+        "HostName": "team1036",
+        "MAC_Address": "f4:39:09:25:8a:75",
+        "IP_Address": "10.0.100.46",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1036"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1036"
+          }
+        }
+      },
+      {
+        "HostName": "team1037",
+        "MAC_Address": "10:e7:c6:05:58:d0",
+        "IP_Address": "10.0.100.47",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1037"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1037"
+          }
+        }
+      },
+      {
+        "HostName": "team1038",
+        "MAC_Address": "f4:39:09:24:cb:bf",
+        "IP_Address": "10.0.100.48",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1038"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1038"
+          }
+        }
+      },
+      {
+        "HostName": "team1039",
+        "MAC_Address": "98:e7:f4:bc:66:6f",
+        "IP_Address": "10.0.100.49",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1039"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1039"
+          }
+        }
+      },
+      {
+        "HostName": "team1040",
+        "MAC_Address": "f4:39:09:46:ff:00",
+        "IP_Address": "10.0.100.50",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1040"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1040"
+          }
+        }
+      },
+      {
+        "HostName": "team1041",
+        "MAC_Address": "18:60:24:24:22:26",
+        "IP_Address": "10.0.100.51",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1041"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1041"
+          }
+        }
+      },
+      {
+        "HostName": "team1042",
+        "MAC_Address": "10:62:e5:11:7c:60",
+        "IP_Address": "10.0.100.52",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1042"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1042"
+          }
+        }
+      },
+      {
+        "HostName": "team1043",
+        "MAC_Address": "18:60:24:27:a4:73",
+        "IP_Address": "10.0.100.53",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1043"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1043"
+          }
+        }
+      },
+      {
+        "HostName": "team1044",
+        "MAC_Address": "f4:39:09:25:8a:cf",
+        "IP_Address": "10.0.100.54",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1044"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1044"
+          }
+        }
+      },
+      {
+        "HostName": "team1045",
+        "MAC_Address": "18:60:24:24:22:64",
+        "IP_Address": "10.0.100.55",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1045"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1045"
+          }
+        }
+      },
+      {
+        "HostName": "team1046",
+        "MAC_Address": "10:62:e5:19:59:fe",
+        "IP_Address": "10.0.100.56",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1046"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1046"
+          }
+        }
+      },
+      {
+        "HostName": "team1047",
+        "MAC_Address": "c4:65:16:3c:12:9d",
+        "IP_Address": "10.0.100.57",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1047"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1047"
+          }
+        }
+      },
+      {
+        "HostName": "team1048",
+        "MAC_Address": "c4:65:16:3c:14:d2",
+        "IP_Address": "10.0.100.58",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1048"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1048"
+          }
+        }
+      },
+      {
+        "HostName": "team1049",
+        "MAC_Address": "ac:e2:d3:0b:e2:a5",
+        "IP_Address": "10.0.100.59",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1049"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1049"
+          }
+        }
+      },
+      {
+        "HostName": "team1050",
+        "MAC_Address": "f4:39:09:20:55:27",
+        "IP_Address": "10.0.100.60",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1050"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1050"
+          }
+        }
+      },
+      {
+        "HostName": "team1051",
+        "MAC_Address": "10:62:e5:16:cf:9a",
+        "IP_Address": "10.0.100.61",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1051"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1051"
+          }
+        }
+      },
+      {
+        "HostName": "team1052",
+        "MAC_Address": "ac:e2:d3:07:a8:fb",
+        "IP_Address": "10.0.100.62",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1052"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1052"
+          }
+        }
+      },
+      {
+        "HostName": "team1053",
+        "MAC_Address": "10:e7:c6:02:9d:22",
+        "IP_Address": "10.0.100.63",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1053"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1053"
+          }
+        }
+      },
+      {
+        "HostName": "team1054",
+        "MAC_Address": "10:62:e5:17:d5:91",
+        "IP_Address": "10.0.100.64",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1054"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1054"
+          }
+        }
+      },
+      {
+        "HostName": "team1055",
+        "MAC_Address": "10:62:e5:16:d0:dd",
+        "IP_Address": "10.0.100.65",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1055"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1055"
+          }
+        }
+      },
+      {
+        "HostName": "team1056",
+        "MAC_Address": "18:60:24:24:24:6f",
+        "IP_Address": "10.0.100.66",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1056"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1056"
+          }
+        }
+      },
+      {
+        "HostName": "team1057",
+        "MAC_Address": "10:e7:c6:0e:0b:1d",
+        "IP_Address": "10.0.100.67",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1057"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1057"
+          }
+        }
+      },
+      {
+        "HostName": "team1058",
+        "MAC_Address": "ac:e2:d3:0c:e1:99",
+        "IP_Address": "10.0.100.68",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1058"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1058"
+          }
+        }
+      },
+      {
+        "HostName": "team1059",
+        "MAC_Address": "f4:39:09:27:8e:6a",
+        "IP_Address": "10.0.100.69",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1059"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1059"
+          }
+        }
+      },
+      {
+        "HostName": "team1060",
+        "MAC_Address": "10:62:e5:16:ce:d0",
+        "IP_Address": "10.0.100.70",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1060"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1060"
+          }
+        }
+      },
+      {
+        "HostName": "team1061",
+        "MAC_Address": "f4:39:09:20:54:e3",
+        "IP_Address": "10.0.100.71",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1061"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1061"
+          }
+        }
+      },
+      {
+        "HostName": "team1062",
+        "MAC_Address": "10:e7:c6:0f:d4:b1",
+        "IP_Address": "10.0.100.72",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1062"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1062"
+          }
+        }
+      },
+      {
+        "HostName": "team1063",
+        "MAC_Address": "10:e7:c6:16:9a:e1",
+        "IP_Address": "10.0.100.73",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1063"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1063"
+          }
+        }
+      },
+      {
+        "HostName": "team1064",
+        "MAC_Address": "f4:39:09:44:9b:f6",
+        "IP_Address": "10.0.100.74",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1064"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1064"
+          }
+        }
+      },
+      {
+        "HostName": "team1065",
+        "MAC_Address": "f4:39:09:37:4d:65",
+        "IP_Address": "10.0.100.75",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1065"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1065"
+          }
+        }
+      },
+      {
+        "HostName": "team1066",
+        "MAC_Address": "f4:39:09:20:00:85",
+        "IP_Address": "10.0.100.76",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1066"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1066"
+          }
+        }
+      },
+      {
+        "HostName": "team1067",
+        "MAC_Address": "10:62:e5:16:cc:a2",
+        "IP_Address": "10.0.100.77",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1067"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1067"
+          }
+        }
+      },
+      {
+        "HostName": "team1068",
+        "MAC_Address": "18:60:24:26:fc:d2",
+        "IP_Address": "10.0.100.78",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1068"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1068"
+          }
+        }
+      },
+      {
+        "HostName": "team1069",
+        "MAC_Address": "10:e7:c6:10:9b:31",
+        "IP_Address": "10.0.100.79",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1069"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1069"
+          }
+        }
+      },
+      {
+        "HostName": "team1070",
+        "MAC_Address": "f4:39:09:20:03:8e",
+        "IP_Address": "10.0.100.80",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1070"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1070"
+          }
+        }
+      },
+      {
+        "HostName": "team1071",
+        "MAC_Address": "f4:39:09:20:54:62",
+        "IP_Address": "10.0.100.81",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1071"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1071"
+          }
+        }
+      },
+      {
+        "HostName": "team1072",
+        "MAC_Address": "10:e7:c6:14:93:91",
+        "IP_Address": "10.0.100.82",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1072"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1072"
+          }
+        }
+      },
+      {
+        "HostName": "team1073",
+        "MAC_Address": "f4:39:09:25:8a:1a",
+        "IP_Address": "10.0.100.83",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1073"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1073"
+          }
+        }
+      },
+      {
+        "HostName": "team1074",
+        "MAC_Address": "ac:e2:d3:0f:e0:15",
+        "IP_Address": "10.0.100.84",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1074"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1074"
+          }
+        }
+      },
+      {
+        "HostName": "team1075",
+        "MAC_Address": "98:e7:f4:bc:05:d8",
+        "IP_Address": "10.0.100.85",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1075"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1075"
+          }
+        }
+      },
+      {
+        "HostName": "team1076",
+        "MAC_Address": "f4:39:09:25:92:76",
+        "IP_Address": "10.0.100.86",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1076"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1076"
+          }
+        }
+      },
+      {
+        "HostName": "team1077",
+        "MAC_Address": "10:62:e5:16:cf:37",
+        "IP_Address": "10.0.100.87",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1077"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1077"
+          }
+        }
+      },
+      {
+        "HostName": "team1078",
+        "MAC_Address": "10:62:e5:19:c8:0a",
+        "IP_Address": "10.0.100.88",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1078"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1078"
+          }
+        }
+      },
+      {
+        "HostName": "team1079",
+        "MAC_Address": "18:60:24:28:80:37",
+        "IP_Address": "10.0.100.89",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1079"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1079"
+          }
+        }
+      },
+      {
+        "HostName": "team1080",
+        "MAC_Address": "10:e7:c6:0c:2d:70",
+        "IP_Address": "10.0.100.90",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1080"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1080"
+          }
+        }
+      },
+      {
+        "HostName": "team1081",
+        "MAC_Address": "f4:39:09:44:9b:92",
+        "IP_Address": "10.0.100.91",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1081"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1081"
+          }
+        }
+      },
+      {
+        "HostName": "team1082",
+        "MAC_Address": "f4:39:09:20:54:97",
+        "IP_Address": "10.0.100.92",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1082"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1082"
+          }
+        }
+      },
+      {
+        "HostName": "team1083",
+        "MAC_Address": "10:e7:c6:0d:23:c1",
+        "IP_Address": "10.0.100.93",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1083"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1083"
+          }
+        }
+      },
+      {
+        "HostName": "team1084",
+        "MAC_Address": "c4:65:16:19:a1:d1",
+        "IP_Address": "10.0.100.94",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1084"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1084"
+          }
+        }
+      },
+      {
+        "HostName": "team1085",
+        "MAC_Address": "10:62:e5:00:92:d0",
+        "IP_Address": "10.0.100.95",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1085"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1085"
+          }
+        }
+      },
+      {
+        "HostName": "team1086",
+        "MAC_Address": "10:e7:c6:0b:29:68",
+        "IP_Address": "10.0.100.96",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1086"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1086"
+          }
+        }
+      },
+      {
+        "HostName": "team1087",
+        "MAC_Address": "f4:39:09:20:54:e0",
+        "IP_Address": "10.0.100.97",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1087"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1087"
+          }
+        }
+      },
+      {
+        "HostName": "team1088",
+        "MAC_Address": "f4:39:09:25:8a:cb",
+        "IP_Address": "10.0.100.98",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1088"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1088"
+          }
+        }
+      },
+      {
+        "HostName": "team1089",
+        "MAC_Address": "18:60:24:24:23:96",
+        "IP_Address": "10.0.100.99",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1089"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1089"
+          }
+        }
+      },
+      {
+        "HostName": "team1090",
+        "MAC_Address": "18:60:24:24:22:75",
+        "IP_Address": "10.0.100.100",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1090"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1090"
+          }
+        }
+      },
+      {
+        "HostName": "team1091",
+        "MAC_Address": "10:62:e5:16:cf:da",
+        "IP_Address": "10.0.100.101",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1091"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1091"
+          }
+        }
+      },
+      {
+        "HostName": "team1092",
+        "MAC_Address": "10:e7:c6:0c:ad:88",
+        "IP_Address": "10.0.100.102",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1092"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1092"
+          }
+        }
+      },
+      {
+        "HostName": "team1093",
+        "MAC_Address": "98:e7:f4:bc:10:22",
+        "IP_Address": "10.0.100.103",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1093"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1093"
+          }
+        }
+      },
+      {
+        "HostName": "team1094",
+        "MAC_Address": "10:e7:c6:0d:23:90",
+        "IP_Address": "10.0.100.104",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1094"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1094"
+          }
+        }
+      },
+      {
+        "HostName": "team1095",
+        "MAC_Address": "ac:e2:d3:10:dd:e2",
+        "IP_Address": "10.0.100.105",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1095"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1095"
+          }
+        }
+      },
+      {
+        "HostName": "team1096",
+        "MAC_Address": "f4:39:09:25:8a:6b",
+        "IP_Address": "10.0.100.106",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1096"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1096"
+          }
+        }
+      },
+      {
+        "HostName": "team1097",
+        "MAC_Address": "10:62:e5:00:1c:fd",
+        "IP_Address": "10.0.100.107",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1097"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1097"
+          }
+        }
+      },
+      {
+        "HostName": "team1098",
+        "MAC_Address": "10:e7:c6:05:88:27",
+        "IP_Address": "10.0.100.108",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1098"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1098"
+          }
+        }
+      },
+      {
+        "HostName": "team1099",
+        "MAC_Address": "10:62:e5:19:ea:72",
+        "IP_Address": "10.0.100.109",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1099"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1099"
+          }
+        }
+      },
+      {
+        "HostName": "team1100",
+        "MAC_Address": "10:62:e5:16:cf:4a",
+        "IP_Address": "10.0.100.110",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1100"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1100"
+          }
+        }
+      },
+      {
+        "HostName": "team1101",
+        "MAC_Address": "f4:39:09:28:a5:0a",
+        "IP_Address": "10.0.100.111",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1101"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1101"
+          }
+        }
+      },
+      {
+        "HostName": "team1102",
+        "MAC_Address": "10:62:e5:16:d1:5b",
+        "IP_Address": "10.0.100.112",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1102"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1102"
+          }
+        }
+      },
+      {
+        "HostName": "team1103",
+        "MAC_Address": "98:e7:f4:bc:0f:1f",
+        "IP_Address": "10.0.100.113",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1103"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1103"
+          }
+        }
+      },
+      {
+        "HostName": "team1104",
+        "MAC_Address": "10:e7:c6:0b:2d:93",
+        "IP_Address": "10.0.100.114",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1104"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1104"
+          }
+        }
+      },
+      {
+        "HostName": "team1105",
+        "MAC_Address": "f4:39:09:27:8e:61",
+        "IP_Address": "10.0.100.115",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1105"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1105"
+          }
+        }
+      },
+      {
+        "HostName": "team1106",
+        "MAC_Address": "10:62:e5:12:18:eb",
+        "IP_Address": "10.0.100.116",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1106"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1106"
+          }
+        }
+      },
+      {
+        "HostName": "team1107",
+        "MAC_Address": "98:e7:f4:bc:14:57",
+        "IP_Address": "10.0.100.117",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1107"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1107"
+          }
+        }
+      },
+      {
+        "HostName": "team1108",
+        "MAC_Address": "ac:e2:d3:00:ed:d4",
+        "IP_Address": "10.0.100.118",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1108"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1108"
+          }
+        }
+      },
+      {
+        "HostName": "team1109",
+        "MAC_Address": "10:62:e5:13:c4:64",
+        "IP_Address": "10.0.100.119",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1109"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1109"
+          }
+        }
+      },
+      {
+        "HostName": "team1110",
+        "MAC_Address": "18:60:24:26:fc:5d",
+        "IP_Address": "10.0.100.120",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1110"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1110"
+          }
+        }
+      },
+      {
+        "HostName": "team1111",
+        "MAC_Address": "ac:e2:d3:03:d0:01",
+        "IP_Address": "10.0.100.121",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1111"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1111"
+          }
+        }
+      },
+      {
+        "HostName": "team1112",
+        "MAC_Address": "10:e7:c6:16:9a:84",
+        "IP_Address": "10.0.100.122",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1112"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1112"
+          }
+        }
+      },
+      {
+        "HostName": "team1113",
+        "MAC_Address": "10:62:e5:01:47:de",
+        "IP_Address": "10.0.100.123",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1113"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1113"
+          }
+        }
+      },
+      {
+        "HostName": "team1114",
+        "MAC_Address": "98:e7:f4:bc:2f:2a",
+        "IP_Address": "10.0.100.124",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1114"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1114"
+          }
+        }
+      },
+      {
+        "HostName": "team1115",
+        "MAC_Address": "ac:e2:d3:16:cf:3d",
+        "IP_Address": "10.0.100.125",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1115"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1115"
+          }
+        }
+      },
+      {
+        "HostName": "team1116",
+        "MAC_Address": "98:e7:f4:bc:68:00",
+        "IP_Address": "10.0.100.126",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1116"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1116"
+          }
+        }
+      },
+      {
+        "HostName": "team1117",
+        "MAC_Address": "98:e7:f4:bc:65:88",
+        "IP_Address": "10.0.100.127",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1117"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1117"
+          }
+        }
+      },
+      {
+        "HostName": "team1118",
+        "MAC_Address": "ac:e2:d3:0d:ca:42",
+        "IP_Address": "10.0.100.128",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1118"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1118"
+          }
+        }
+      },
+      {
+        "HostName": "team1119",
+        "MAC_Address": "ac:e2:d3:01:18:63",
+        "IP_Address": "10.0.100.129",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1119"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1119"
+          }
+        }
+      },
+      {
+        "HostName": "team1120",
+        "MAC_Address": "98:e7:f4:be:1a:44",
+        "IP_Address": "10.0.100.130",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1120"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1120"
+          }
+        }
+      },
+      {
+        "HostName": "team1121",
+        "MAC_Address": "10:62:e5:16:53:fb",
+        "IP_Address": "10.0.100.131",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1121"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1121"
+          }
+        }
+      },
+      {
+        "HostName": "team1122",
+        "MAC_Address": "f4:39:09:20:54:c7",
+        "IP_Address": "10.0.100.132",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1122"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1122"
+          }
+        }
+      },
+      {
+        "HostName": "team1123",
+        "MAC_Address": "98:e7:f4:bc:15:1e",
+        "IP_Address": "10.0.100.133",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1123"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1123"
+          }
+        }
+      },
+      {
+        "HostName": "team1124",
+        "MAC_Address": "ac:e2:d3:00:ac:95",
+        "IP_Address": "10.0.100.134",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1124"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1124"
+          }
+        }
+      },
+      {
+        "HostName": "team1125",
+        "MAC_Address": "ac:e2:d3:06:88:38",
+        "IP_Address": "10.0.100.135",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1125"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1125"
+          }
+        }
+      },
+      {
+        "HostName": "team1126",
+        "MAC_Address": "10:62:e5:1a:7a:b7",
+        "IP_Address": "10.0.100.136",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1126"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1126"
+          }
+        }
+      },
+      {
+        "HostName": "team1127",
+        "MAC_Address": "ac:e2:d3:02:08:36",
+        "IP_Address": "10.0.100.137",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1127"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1127"
+          }
+        }
+      },
+      {
+        "HostName": "team1128",
+        "MAC_Address": "10:e7:c6:05:53:65",
+        "IP_Address": "10.0.100.138",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1128"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1128"
+          }
+        }
+      },
+      {
+        "HostName": "team1129",
+        "MAC_Address": "10:62:e5:16:54:a9",
+        "IP_Address": "10.0.100.139",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1129"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1129"
+          }
+        }
+      },
+      {
+        "HostName": "team1130",
+        "MAC_Address": "98:e7:f4:bc:65:22",
+        "IP_Address": "10.0.100.140",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1130"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1130"
+          }
+        }
+      },
+      {
+        "HostName": "team1131",
+        "MAC_Address": "f4:39:09:25:86:06",
+        "IP_Address": "10.0.100.141",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1131"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1131"
+          }
+        }
+      },
+      {
+        "HostName": "team1132",
+        "MAC_Address": "10:e7:c6:0d:23:70",
+        "IP_Address": "10.0.100.142",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1132"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1132"
+          }
+        }
+      },
+      {
+        "HostName": "team1133",
+        "MAC_Address": "ac:e2:d3:01:69:75",
+        "IP_Address": "10.0.100.143",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1133"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1133"
+          }
+        }
+      },
+      {
+        "HostName": "team1134",
+        "MAC_Address": "10:e7:c6:0d:23:58",
+        "IP_Address": "10.0.100.144",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1134"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1134"
+          }
+        }
+      },
+      {
+        "HostName": "team1135",
+        "MAC_Address": "10:62:e5:11:38:c1",
+        "IP_Address": "10.0.100.145",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1135"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1135"
+          }
+        }
+      },
+      {
+        "HostName": "team1136",
+        "MAC_Address": "c4:65:16:17:3c:92",
+        "IP_Address": "10.0.100.146",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1136"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1136"
+          }
+        }
+      },
+      {
+        "HostName": "team1137",
+        "MAC_Address": "10:e7:c6:08:ac:c6",
+        "IP_Address": "10.0.100.147",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1137"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1137"
+          }
+        }
+      },
+      {
+        "HostName": "team1138",
+        "MAC_Address": "10:e7:c6:0d:a6:31",
+        "IP_Address": "10.0.100.148",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1138"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1138"
+          }
+        }
+      },
+      {
+        "HostName": "team1139",
+        "MAC_Address": "f4:39:09:24:1d:be",
+        "IP_Address": "10.0.100.149",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1139"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1139"
+          }
+        }
+      },
+      {
+        "HostName": "team1140",
+        "MAC_Address": "10:e7:c6:0b:2d:43",
+        "IP_Address": "10.0.100.150",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1140"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1140"
+          }
+        }
+      },
+      {
+        "HostName": "team1141",
+        "MAC_Address": "ac:e2:d3:16:0c:19",
+        "IP_Address": "10.0.100.151",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1141"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1141"
+          }
+        }
+      },
+      {
+        "HostName": "team1142",
+        "MAC_Address": "f4:39:09:25:8a:33",
+        "IP_Address": "10.0.100.152",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1142"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1142"
+          }
+        }
+      },
+      {
+        "HostName": "team1143",
+        "MAC_Address": "18:60:24:22:97:f9",
+        "IP_Address": "10.0.100.153",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1143"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1143"
+          }
+        }
+      },
+      {
+        "HostName": "team1144",
+        "MAC_Address": "10:62:e5:16:cf:b4",
+        "IP_Address": "10.0.100.154",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team1144"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team1144"
+          }
+        }
+      },
+      {
+        "HostName": "team2001",
+        "MAC_Address": "f4:39:09:20:54:b5",
+        "IP_Address": "10.0.100.155",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2001"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2001"
+          }
+        }
+      },
+      {
+        "HostName": "team2002",
+        "MAC_Address": "f4:39:09:20:55:5c",
+        "IP_Address": "10.0.100.156",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2002"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2002"
+          }
+        }
+      },
+      {
+        "HostName": "team2003",
+        "MAC_Address": "f4:39:09:26:f9:83",
+        "IP_Address": "10.0.100.157",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2003"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2003"
+          }
+        }
+      },
+      {
+        "HostName": "team2004",
+        "MAC_Address": "10:62:e5:0e:22:26",
+        "IP_Address": "10.0.100.158",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2004"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2004"
+          }
+        }
+      },
+      {
+        "HostName": "team2005",
+        "MAC_Address": "f4:39:09:27:92:1f",
+        "IP_Address": "10.0.100.159",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2005"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2005"
+          }
+        }
+      },
+      {
+        "HostName": "team2006",
+        "MAC_Address": "10:e7:c6:10:f4:c4",
+        "IP_Address": "10.0.100.160",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2006"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2006"
+          }
+        }
+      },
+      {
+        "HostName": "team2007",
+        "MAC_Address": "98:e7:f4:bc:13:91",
+        "IP_Address": "10.0.100.161",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2007"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2007"
+          }
+        }
+      },
+      {
+        "HostName": "team2008",
+        "MAC_Address": "10:62:e5:16:cf:11",
+        "IP_Address": "10.0.100.162",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2008"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2008"
+          }
+        }
+      },
+      {
+        "HostName": "team2009",
+        "MAC_Address": "f4:39:09:24:cb:bb",
+        "IP_Address": "10.0.100.163",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2009"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2009"
+          }
+        }
+      },
+      {
+        "HostName": "team2010",
+        "MAC_Address": "f4:39:09:20:54:ce",
+        "IP_Address": "10.0.100.164",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2010"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2010"
+          }
+        }
+      },
+      {
+        "HostName": "team2011",
+        "MAC_Address": "f4:39:09:20:54:00",
+        "IP_Address": "10.0.100.165",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2011"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2011"
+          }
+        }
+      },
+      {
+        "HostName": "team2012",
+        "MAC_Address": "ac:e2:d3:14:de:01",
+        "IP_Address": "10.0.100.166",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2012"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2012"
+          }
+        }
+      },
+      {
+        "HostName": "team2013",
+        "MAC_Address": "10:62:e5:18:11:58",
+        "IP_Address": "10.0.100.167",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2013"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2013"
+          }
+        }
+      },
+      {
+        "HostName": "team2014",
+        "MAC_Address": "f4:39:09:24:cb:ec",
+        "IP_Address": "10.0.100.168",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2014"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2014"
+          }
+        }
+      },
+      {
+        "HostName": "team2015",
+        "MAC_Address": "10:62:e5:0a:27:ed",
+        "IP_Address": "10.0.100.169",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2015"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2015"
+          }
+        }
+      },
+      {
+        "HostName": "team2016",
+        "MAC_Address": "10:62:e5:1a:c7:67",
+        "IP_Address": "10.0.100.170",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2016"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2016"
+          }
+        }
+      },
+      {
+        "HostName": "team2017",
+        "MAC_Address": "f4:39:09:20:04:95",
+        "IP_Address": "10.0.100.171",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2017"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2017"
+          }
+        }
+      },
+      {
+        "HostName": "team2018",
+        "MAC_Address": "10:62:e5:16:cf:a5",
+        "IP_Address": "10.0.100.172",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2018"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2018"
+          }
+        }
+      },
+      {
+        "HostName": "team2019",
+        "MAC_Address": "f4:39:09:25:8a:78",
+        "IP_Address": "10.0.100.173",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2019"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2019"
+          }
+        }
+      },
+      {
+        "HostName": "team2020",
+        "MAC_Address": "98:e7:f4:bc:64:8b",
+        "IP_Address": "10.0.100.174",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2020"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2020"
+          }
+        }
+      },
+      {
+        "HostName": "team2021",
+        "MAC_Address": "f4:39:09:44:9b:e9",
+        "IP_Address": "10.0.100.175",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2021"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2021"
+          }
+        }
+      },
+      {
+        "HostName": "team2022",
+        "MAC_Address": "f4:39:09:20:55:6b",
+        "IP_Address": "10.0.100.176",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2022"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2022"
+          }
+        }
+      },
+      {
+        "HostName": "team2023",
+        "MAC_Address": "10:e7:c6:0b:2e:ec",
+        "IP_Address": "10.0.100.177",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2023"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2023"
+          }
+        }
+      },
+      {
+        "HostName": "team2024",
+        "MAC_Address": "10:62:e5:16:cc:9c",
+        "IP_Address": "10.0.100.178",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2024"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2024"
+          }
+        }
+      },
+      {
+        "HostName": "team2025",
+        "MAC_Address": "ac:e2:d3:0d:e9:68",
+        "IP_Address": "10.0.100.179",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2025"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2025"
+          }
+        }
+      },
+      {
+        "HostName": "team2026",
+        "MAC_Address": "10:62:e5:12:da:03",
+        "IP_Address": "10.0.100.180",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2026"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2026"
+          }
+        }
+      },
+      {
+        "HostName": "team2027",
+        "MAC_Address": "10:62:e5:16:d0:dc",
+        "IP_Address": "10.0.100.181",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2027"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2027"
+          }
+        }
+      },
+      {
+        "HostName": "team2028",
+        "MAC_Address": "98:e7:f4:bc:63:c5",
+        "IP_Address": "10.0.100.182",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2028"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2028"
+          }
+        }
+      },
+      {
+        "HostName": "team2029",
+        "MAC_Address": "18:60:24:26:bd:90",
+        "IP_Address": "10.0.100.183",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2029"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2029"
+          }
+        }
+      },
+      {
+        "HostName": "team2030",
+        "MAC_Address": "ac:e2:d3:0b:d6:23",
+        "IP_Address": "10.0.100.184",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2030"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2030"
+          }
+        }
+      },
+      {
+        "HostName": "team2031",
+        "MAC_Address": "f4:39:09:25:8a:89",
+        "IP_Address": "10.0.100.185",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2031"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2031"
+          }
+        }
+      },
+      {
+        "HostName": "team2032",
+        "MAC_Address": "18:60:24:24:22:9f",
+        "IP_Address": "10.0.100.186",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2032"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2032"
+          }
+        }
+      },
+      {
+        "HostName": "team2033",
+        "MAC_Address": "f4:39:09:20:00:08",
+        "IP_Address": "10.0.100.187",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2033"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2033"
+          }
+        }
+      },
+      {
+        "HostName": "team2034",
+        "MAC_Address": "10:62:e5:1b:18:0f",
+        "IP_Address": "10.0.100.188",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2034"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2034"
+          }
+        }
+      },
+      {
+        "HostName": "team2035",
+        "MAC_Address": "ac:e2:d3:15:8b:b2",
+        "IP_Address": "10.0.100.189",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2035"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2035"
+          }
+        }
+      },
+      {
+        "HostName": "team2036",
+        "MAC_Address": "10:e7:c6:0e:64:14",
+        "IP_Address": "10.0.100.190",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team2036"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team2036"
+          }
+        }
+      },
+      {
+        "HostName": "team3001",
+        "MAC_Address": "10:e7:c6:05:b2:07",
+        "IP_Address": "10.0.100.191",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3001"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3001"
+          }
+        }
+      },
+      {
+        "HostName": "team3002",
+        "MAC_Address": "10:62:e5:0d:1c:c9",
+        "IP_Address": "10.0.100.192",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3002"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3002"
+          }
+        }
+      },
+      {
+        "HostName": "team3003",
+        "MAC_Address": "f4:39:09:27:93:bf",
+        "IP_Address": "10.0.100.193",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3003"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3003"
+          }
+        }
+      },
+      {
+        "HostName": "team3004",
+        "MAC_Address": "ac:e2:d3:17:24:44",
+        "IP_Address": "10.0.100.194",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3004"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3004"
+          }
+        }
+      },
+      {
+        "HostName": "team3005",
+        "MAC_Address": "98:e7:f4:bc:64:89",
+        "IP_Address": "10.0.100.195",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3005"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3005"
+          }
+        }
+      },
+      {
+        "HostName": "team3006",
+        "MAC_Address": "f4:39:09:25:92:53",
+        "IP_Address": "10.0.100.196",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3006"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3006"
+          }
+        }
+      },
+      {
+        "HostName": "team3007",
+        "MAC_Address": "c4:65:16:17:58:a8",
+        "IP_Address": "10.0.100.197",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3007"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3007"
+          }
+        }
+      },
+      {
+        "HostName": "team3008",
+        "MAC_Address": "10:e7:c6:11:40:28",
+        "IP_Address": "10.0.100.198",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3008"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3008"
+          }
+        }
+      },
+      {
+        "HostName": "team3009",
+        "MAC_Address": "98:e7:f4:bc:67:a5",
+        "IP_Address": "10.0.100.199",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3009"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3009"
+          }
+        }
+      },
+      {
+        "HostName": "team3010",
+        "MAC_Address": "10:e7:c6:05:58:b8",
+        "IP_Address": "10.0.100.200",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3010"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3010"
+          }
+        }
+      },
+      {
+        "HostName": "team3011",
+        "MAC_Address": "10:62:e5:19:c9:12",
+        "IP_Address": "10.0.100.201",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3011"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3011"
+          }
+        }
+      },
+      {
+        "HostName": "team3012",
+        "MAC_Address": "f4:39:09:26:4e:a2",
+        "IP_Address": "10.0.100.202",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "team3012"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "team3012"
+          }
+        }
+      },
+      {
+        "HostName": "printer",
+        "MAC_Address": "00:1c:df:de:d6:14",
+        "IP_Address": "10.0.100.252",
+        "Options_List": {
+          "Options": {
+            "domain-name": "acpc.local",
+            "host-name": "printer"
+          }
+        },
+        "DDNS_Options_List": {
+          "DDNSOptions_List": {
+            "ddns-hostname": "printer"
+          }
+        }
+      }
+    ]
+  },
+  "Subnets": {
+    "Subnets_List": []
+  },
+  "Global_Options": {
+    "Options": {
+      "domain-name": "acpc.local",
+      "domain-name-servers": "10.0.3.2",
+      "domain-search": "acpc.local"
+    }
+  },
+  "Global_DDNSOptions": {
+    "DDNSOptions_List": {
+      "ddns-updates": "on",
+      "ddns-update-style": "interim",
+      "ddns-rev-domainname": "0.10.in-addr.arpa",
+      "ddns-domainname": "acpc.local"
+    }
+  },
+  "Shared_network": {
+    "Name": "lan",
+    "Subnets_List": [
+      {
+        "Fixed-Address": "10.0.3.0",
+        "Netmask": "255.255.255.0",
+        "Next-Server": "10.0.3.2",
+        "RangeStart": "10.0.3.2",
+        "RangeEnd": "10.0.3.254",
+        "Options_List": {
+          "Options": {
+            "routers": "10.0.3.1"
+          }
+        }
+      },
+      {
+        "Fixed-Address": "10.0.4.0",
+        "Netmask": "255.255.255.0",
+        "Next-Server": "10.0.3.2",
+        "RangeStart": "10.0.4.2",
+        "RangeEnd": "10.0.4.254",
+        "Options_List": {
+          "Options": {
+            "routers": "10.0.4.1"
+          }
+        }
+      },
+      {
+        "Fixed-Address": "10.0.2.0",
+        "Netmask": "255.255.255.0",
+        "Next-Server": "10.0.3.2",
+        "RangeStart": "10.0.2.2",
+        "RangeEnd": "10.0.2.254",
+        "Options_List": {
+          "Options": {
+            "routers": "10.0.2.1"
+          }
+        }
+      },
+      {
+        "Fixed-Address": "10.0.100.0",
+        "Netmask": "255.255.255.0",
+        "Next-Server": "10.0.3.2",
+        "RangeStart": "10.0.100.2",
+        "RangeEnd": "10.0.100.253",
+        "Options_List": {
+          "Options": {
+            "routers": "10.0.100.1"
+          }
+        }
+      }
+    ]
+  },
+  "Includes": {
+    "Includes_List": [
+      "/acpc/adm/etc/dhcp/dhcpd.conf.options",
+      "/acpc/adm/etc/dhcp/dhcpupdate.conf",
+      "/acpc/adm/etc/dhcp/dhcpd.conf.subnet",
+      "/acpc/adm/etc/dhcp/dhcpd.conf.hosts",
+      "/acpc/adm/etc/dhcp/domainupdate",
+      "/acpc/adm/etc/dhcp/reversedomainupdate"
+    ]
+  },
+  "DNSUpdateKey": {
+    "KeyName": "dhcpupdate",
+    "Alg": "hmac-md5",
+    "Secret": "WxQm9E6vVBUc1E0NTw8GXCHNj7p/+yhUMB5Fq1crHDrncjZsqdsZXSljWyT0JBsuGDt12kZtn+VoJmi+niXyGQ=="
+  },
+  "ZoneInfo": {
+    "ZonesList": {
+      "0.10.in-addr.arpa": {
+        "zonePrimary": "127.0.0.1",
+        "zoneKey": "dhcpupdate"
+      },
+      "acpc.local": {
+        "zonePrimary": "127.0.0.1",
+        "zoneKey": "dhcpupdate"
+      }
+    }
+  }
+}
+]]></system-out>
+  </testcase>
+</testsuite>
