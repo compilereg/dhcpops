@@ -33,12 +33,32 @@ public class HostBlocksModel extends Configuration  {
 		this.hostBlockList = hostBlockList;
 	}
 	
+	public HostBasicInfoModel getHost(String hostName) {
+		
+		HostBasicInfoModel hb = null;
+		if (! FindItem.elementExist(hostBlockList,hostName)) {
+			throw new HostNameNotFoundException();
+		}
+		int location = FindItem.getLocation(hostBlockList,hostName);
+		hb=hostBlockList.get(location);
+		return hb;
+	}
+	
 	public void addNewHostReservation(String hostName, String mACAddress, String iPAddress) {
 		//Check if the host is already exist
 		if ( FindItem.elementExist(hostBlockList,hostName)) {
 			throw new HostNameExistException();
 		}
 		HostBasicInfoModel m = new HostBasicInfoModel(hostName,mACAddress,iPAddress);
+		hostBlockList.add(m);
+	}
+	
+	public void addNewHostReservation(String hostName) {
+		//Check if the host is already exist
+		if ( FindItem.elementExist(hostBlockList,hostName)) {
+			throw new HostNameExistException();
+		}
+		HostBasicInfoModel m = new HostBasicInfoModel(hostName);
 		hostBlockList.add(m);
 	}
 	

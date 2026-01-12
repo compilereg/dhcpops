@@ -24,6 +24,13 @@ public class HostBasicInfoModel extends Configuration implements IGetName {
 	/*
 	 * Can add any other configuration categories here.
 	 */
+	public HostBasicInfoModel(String hostName) {
+		super();
+		this.hostName = hostName;		
+		this.hostOptions = new OptionsModel();
+		this.ddnsHostOption = new DDNSOptionsModel();
+		
+	}
 	
 	public HostBasicInfoModel(String hostName, String mACAddress, String iPAddress) {
 		super();

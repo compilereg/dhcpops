@@ -30,9 +30,9 @@ public class DirectivesModel extends Configuration {
 	
 	public void addDirective(String name, String value) {
 		//Check if the directive is already added before
-		if ( directives.containsKey(name) ) {
+/*		if ( directives.containsKey(name) ) {
 			throw new DirectiveExistException();
-		}
+		}*/
 		//Add the directive
 		directives.put(name, value);
 	}
