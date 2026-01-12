@@ -6,12 +6,10 @@ import com.google.gson.annotations.SerializedName;
 
 import Exceptions.DDNSOptionExistException;
 import Exceptions.DDNSOptionNotExistException;
-import configuration.Configuration;
-
 /*
  * Hold list of DDNSOption
  */
-public class DDNSOptionsModel extends Configuration  {
+public class DDNSOptionsModel {
 	@SerializedName("DDNSOptions_List")
 	private HashMap<String,String> ddnsoptions;
 	

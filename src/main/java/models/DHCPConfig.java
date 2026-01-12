@@ -3,9 +3,7 @@ package models;
 
 import com.google.gson.annotations.SerializedName;
 
-import configuration.Configuration;
-
-public class DHCPConfig extends Configuration {
+public class DHCPConfig {
 	@SerializedName("Global_Direcives")
 	private DirectivesModel DirectiveList;		//Done
 	@SerializedName("Hosts")
@@ -19,15 +17,20 @@ public class DHCPConfig extends Configuration {
 	@SerializedName("Shared_network")
 	private SharedNetwork SharedNetwork;		//Done
 	@SerializedName("Includes")
-	private IncludesModel IncludeFilesList;		//Done		
+	private IncludesModel IncludeFilesList;		//Done	
+	@SerializedName("DNSUpdateKey")
+	private DNSUpdateKey dnsUpdateKey;
 	
 	public void createObjs() {
+		
 		this.DirectiveList = new DirectivesModel(); 
 		this.HostBlockList = new HostBlocksModel();
 		this.SubnetBlockList = new SubnetBlocksModel();
 		this.OptionsList = new OptionsModel();
 		this.DDNSOptionList = new DDNSOptionsModel();
 		this.IncludeFilesList = new IncludesModel();
+		this.dnsUpdateKey = new DNSUpdateKey();
+		
 	}
 	
 	public DHCPConfig() {
@@ -54,6 +57,14 @@ public class DHCPConfig extends Configuration {
 	public void setHostBlockList(HostBlocksModel HostBlockList) {
 		this.HostBlockList = HostBlockList;
 	}
+	public DNSUpdateKey getDnsUpdateKey() {
+		return dnsUpdateKey;
+	}
+
+	public void setDnsUpdateKey(DNSUpdateKey dnsUpdateKey) {
+		this.dnsUpdateKey = dnsUpdateKey;
+	}
+
 	public SubnetBlocksModel getSubnetBlockList() {
 		return SubnetBlockList;
 	}

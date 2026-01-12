@@ -6,12 +6,11 @@ import com.google.gson.annotations.SerializedName;
 
 import Exceptions.OptionExistException;
 import Exceptions.OptionNotExistException;
-import configuration.Configuration;
 
 /*
  * To hold list of option model
  */
-public class OptionsModel extends Configuration {
+public class OptionsModel {
 	@SerializedName("Options")
 	private HashMap<String,String> options;
 	//private List<OptionModel> options;

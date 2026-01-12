@@ -7,9 +7,8 @@ import com.google.gson.annotations.SerializedName;
 
 import Exceptions.IncludeFileExistException;
 import Exceptions.IncludeFileNotExistException;
-import configuration.Configuration;
 
-public class IncludesModel extends Configuration {
+public class IncludesModel {
 	@SerializedName("Includes_List")
 	private List<String> includeFiles;
 	

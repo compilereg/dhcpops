@@ -1,5 +1,8 @@
 package listeners;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aast.cndc.dhcpparser.iscdhcpBaseListener;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.AllowBootingDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.AuthoritativeDirectiveContext;
@@ -10,37 +13,67 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser.DDNSUpdateStyleDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DDNSUpdatesDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DHCPConfigContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DefaultLeaseTimeDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.FilenameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.FixedAddressDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.HardwareEthernetDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.HostBlockDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.HostblockContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.IncludeDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.KeyBlockDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.LogFacilityDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.MaxLeaseTimeDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.NextServerDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameServersDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainSearchDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionHostNameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionRoutersDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionSubnetMaskDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.RangeDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.SharedNetBlockDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.SharednetblockContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.SubnetBlockDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.SubnetblockContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.UpdateStaticLeasesDirectiveContext;
 import models.DHCPConfig;
 import models.HostBasicInfoModel;
+import models.SubnetBlockModel;
 
 //handles the open and close of dhcp config files
 public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	
-	private int counter;
+
 	private DHCPConfig config;
 	private boolean hostBlock;
 	private boolean subnetBlock;
+	private boolean sharednetwork;
 	private String hostName;
+	private String sharenetwork_name;
+	private String subnet_ip;
 	
+	//Used to store the incudeFiles which will be recursivly visited from the caller
+	private List<String> includeFilePathes;
+	
+	
+	public List<String> getIncludeFilePathes() {
+		return includeFilePathes;
+	}
+
 	public DHCPFilerLoader(DHCPConfig config) {
-		this.counter = 0;
+
 		this.config = config;
 		this.hostBlock = false;
 		this.subnetBlock = false;
+		this.sharednetwork = false;
+		this.includeFilePathes = new ArrayList<>();
+	}
+	
+	
+	//USed to format a string, 
+	private String normalizeString(String s) {
+		String str;
+				str = s.replaceAll("\"", "");
+		return str.toString();
 	}
 	
 	public DHCPConfig getConfig() {
@@ -63,11 +96,25 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 		String newName = name.replace("option ", "");
 		if ( ! this.hostBlock && ! this.subnetBlock) {
 			//Add the option to the root			
-			this.config.getOptionsList().addOption(newName,value);					
+			this.config.getOptionsList().addOption(newName,normalizeString(value));					
 		}
 		else {
+			if ( this.hostBlock ) {
 			HostBasicInfoModel hb = config.getHostBlockList().getHost(this.hostName);
-			hb.getHostOptions().addOption(newName,value);
+			hb.getHostOptions().addOption(newName,normalizeString(value));
+			}
+			else {	//add the option in subnet
+				SubnetBlockModel sb;
+				//If subnet inside shared network
+	 			if ( this.sharednetwork && this.subnetBlock )  {
+	 				sb=this.config.getSharedNetwork().getSubnet(this.subnet_ip);
+	 				sb.addSubnetOption(newName,normalizeString(value));
+	 			} else  {
+	 				//If subnet is out of shared network
+	 				sb = config.getSubnetBlockList().getSubnet(this.subnet_ip);
+	 				sb.addSubnetOption(newName,normalizeString(value));
+	 			}
+			}
 		}
 
 	}	
@@ -77,11 +124,26 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 		//Check if the option is root (Not inside host block nor inside subnet block)
 		if ( ! this.hostBlock && ! this.subnetBlock) {
 			//Add the option to the root
-			this.config.getDDNSOptionList().addDDNSOption(name, value);					
+			this.config.getDDNSOptionList().addDDNSOption(name, normalizeString(value));					
 		}
 		else {
-			HostBasicInfoModel hb = config.getHostBlockList().getHost(this.hostName);
-			hb.getDdnsHostOption().addDDNSOption(name,value);
+			//Add the options in host block
+			if ( this.hostBlock ) {
+				HostBasicInfoModel hb = config.getHostBlockList().getHost(this.hostName);
+				hb.getDdnsHostOption().addDDNSOption(name,normalizeString(value));
+			} 
+			else {	//add the ddns option in subnet
+				SubnetBlockModel sb;
+				//If subnet inside shared network
+	 			if ( this.sharednetwork && this.subnetBlock )  {
+	 				sb=this.config.getSharedNetwork().getSubnet(this.subnet_ip);
+	 				sb.addSubnetDDNSOption(name,normalizeString(value));
+	 			} else  {
+	 				//If subnet is out of shared network
+	 				sb = config.getSubnetBlockList().getSubnet(this.subnet_ip);
+	 				sb.addSubnetDDNSOption(name,normalizeString(value));
+	 			}
+			}
 		}
 
 	}	
@@ -92,10 +154,8 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 		if ( ! this.hostBlock && ! this.subnetBlock) {
 			//Add the option to the root
 			//this.config.getDDNSOptionList().addDDNSOption(name, value);
-			this.config.getDirectiveList().addDirective(name, value);
-			
+			this.config.getDirectiveList().addDirective(name, normalizeString(value));
 		}
-
 	}
 	
 	private void processIncludes(String fileName) {
@@ -104,15 +164,164 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 				if ( ! this.hostBlock && ! this.subnetBlock) {
 					//Add the option to the root
 					//this.config.getDDNSOptionList().addDDNSOption(name, value);
-					this.config.getIncludeFilesList().addIncludeFile(fileName);
-				}
+					this.config.getIncludeFilesList().addIncludeFile(normalizeString(fileName));
+					includeFilePathes.add(normalizeString(fileName));
+				}		
+	}
+	
+	
+	/*
+	 * Start the key :-)
+	 */
+	
+
+	@Override
+	public void enterKeyBlockDirective(KeyBlockDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterKeyBlockDirective(ctx);
+		config.getDnsUpdateKey().setKeyName(ctx.getChild(1).getText());
+		config.getDnsUpdateKey().setAlg(ctx.getChild(4).getText());
+		config.getDnsUpdateKey().setSecret( normalizeString(ctx.getChild(7).getText()));
+	}
+
+	
+	/*
+	 * End the key
+	 */
+	
+	/*
+	 * Start the subnet 
+	 */
+
+	
+
+	@Override
+	public void enterSubnetblock(SubnetblockContext ctx) {
+		
+		// TODO Auto-generated method stub
+		super.enterSubnetblock(ctx);
+		this.subnetBlock = true;
+		this.subnet_ip = ctx.getChild(1).getText();
+		String NetMask = ctx.getChild(3).getText();
+		//Create the subnet in shared network if sharednetwork is true
+		if ( this.sharednetwork ) {
+			this.config.getSharedNetwork().addNewSubnet(this.subnet_ip, NetMask);
+		}
+		else {	
+			this.config.getSubnetBlockList().addNewSubnet(this.subnet_ip, NetMask);
+		}
+	}
+
+	
+	@Override
+	public void enterRangeDirective(RangeDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterRangeDirective(ctx);
+		if ( this.subnetBlock ) {
+			String r1 = ctx.getChild(1).getText();
+			String r2 = ctx.getChild(2).getText();
+			SubnetBlockModel sb;
+			if ( this.sharednetwork )
+				sb = config.getSharedNetwork().getSubnet(this.subnet_ip);
+			else
+				sb = config.getSubnetBlockList().getSubnet(this.subnet_ip);;
+			sb.setRangeStart(r1);
+			sb.setRangeEnd(r2);
+		}
+	}
+
+	@Override
+	public void enterNextServerDirective(NextServerDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterNextServerDirective(ctx);
+	
+		if ( this.subnetBlock ) {
+			SubnetBlockModel sb;
+			if ( this.sharednetwork )
+				sb = config.getSharedNetwork().getSubnet(this.subnet_ip);
+			else
+				sb = config.getSubnetBlockList().getSubnet(this.subnet_ip);;
+			String nextserverIP =  ctx.getChild(1).getText(); 
+			sb.setNextServer(nextserverIP);
+		}
+	
+	}
+
+	@Override
+	public void enterFilenameDirective(FilenameDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterFilenameDirective(ctx);
+		if ( this.subnetBlock ) {
+			SubnetBlockModel sb;
+			if ( this.sharednetwork )
+				sb = config.getSharedNetwork().getSubnet(this.subnet_ip);
+			else
+				sb = config.getSubnetBlockList().getSubnet(this.subnet_ip);;
+			String fileName =  ctx.getChild(1).getText(); 
+			sb.setFilename(fileName);
+		}
+	}
+
+
+	@Override
+	public void exitSubnetblock(SubnetblockContext ctx) {
+		
+		// TODO Auto-generated method stub
+		super.exitSubnetblock(ctx);
+		this.subnetBlock = false;
+		this.subnet_ip = null;
+
+	}
+	
+	
+	/*
+	 * End the subnet
+	 */
+	
+	
+	/*
+	 * Start the shared network
+	 */
+	
+
+	@Override
+	public void enterSharedNetBlockDirective(SharedNetBlockDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterSharedNetBlockDirective(ctx);
+		this.sharednetwork = true;
 		
 	}
+
+
+	@Override
+	public void enterSharednetblock(SharednetblockContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterSharednetblock(ctx);
+		if  ( this.sharednetwork ) {
+			this.sharenetwork_name = ctx.getChild(1).getText();
+			this.config.getSharedNetwork().setNetworkName(this.sharenetwork_name);
+		}
+	}
+
+	
+	@Override
+	public void exitSharedNetBlockDirective(SharedNetBlockDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.exitSharedNetBlockDirective(ctx);
+		this.sharednetwork = false;
+	}
+
+
+	
+	/*
+	 * End the shared network
+	 */
 	
 	/*
 	 * Start host block
 	 */
 	
+
 	@Override
 	public void enterHostBlockDirective(HostBlockDirectiveContext ctx) {
 		// TODO Auto-generated method stub
@@ -166,11 +375,6 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	/*
 	 * End host block
 	 */
-	
-	
-
-	
-
 
 
 	/*
@@ -322,7 +526,7 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	}
 	
 	/*
-	 * Start Option directives
+	 * End Option directives
 	 */
 	
 	

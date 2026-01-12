@@ -11,13 +11,12 @@ import Exceptions.HostNameExistException;
 import Exceptions.HostNameNotFoundException;
 import Exceptions.OptionExistException;
 import Exceptions.OptionNotExistException;
-import configuration.Configuration;
 import utils.FindItem;
 
 /*
  * Store all host blocks found 
  */
-public class HostBlocksModel extends Configuration  {
+public class HostBlocksModel  {
 	@SerializedName("Hosts_List")
 	private List<HostBasicInfoModel> hostBlockList;
 	

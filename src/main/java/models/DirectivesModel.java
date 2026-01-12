@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 import Exceptions.DirectiveExistException;
 import Exceptions.DirectiveNotExistException;
-import configuration.Configuration;
 
-public class DirectivesModel extends Configuration {
+
+public class DirectivesModel {
 	@SerializedName("Directives_List")
 	private HashMap<String,String> directives;
 	

@@ -6,10 +6,9 @@ import Exceptions.DDNSOptionExistException;
 import Exceptions.DDNSOptionNotExistException;
 import Exceptions.OptionExistException;
 import Exceptions.OptionNotExistException;
-import configuration.Configuration;
 import utils.IGetName;
 
-public class HostBasicInfoModel extends Configuration implements IGetName {
+public class HostBasicInfoModel implements IGetName {
 	
 	@SerializedName("HostName")
 	private String hostName;

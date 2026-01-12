@@ -23,7 +23,7 @@
 
 
     //Start the main directives
-    config: { startFile(); } (serverconfline | commonconfline | confblock)+ EOF {   finishFile();}                      # DHCPConfig    
+    config: { startFile(); } (serverconfline | commonconfline | confblock | keyblock)+ EOF {   finishFile();}                      # DHCPConfig    
         ;
 
     serverconfline: SINGLEDIRECTIVE';'                                              # AuthoritativeDirective
@@ -50,6 +50,12 @@
              | subnetblock                                                          # SubnetBlockDirective    
              | sharednetblock                                                       # SharedNetBlockDirective
              ;
+
+    keyblock: 'key' HOSTNAME '{'                                                    
+                'algorithm' ('hmac-md5' | 'hmac-sha1' | 'hmac-sha256')';'                        
+                'secret' SECRET';'                                 
+            '};'                                                                    # KeyBlockDirective
+            ;                                                                      
 
     sharednetblock: 'shared-network' HOSTNAME '{' subnetblock+  '}';                                                   
 
@@ -82,6 +88,7 @@
     QUOTEDHOSTNAME: '"'HOSTNAME'"';
     HOSTNAME: [a-zA-Z][a-zA-Z0-9-_]*;
     FILEPATH: '"'[-_./a-zA-Z0-9]+'"';
+    SECRET: '"' [a-zA-Z0-9+/=]+ '"';
     COMMENT: '#' ~[\r\n]* -> skip;      
     WS : [ \t\r\n]+ -> skip ;
     fragment OCTET : ([0-9] | [0-9][0-9] | [0-1][0-9][0-9] | '2'[0-5][0-5]);

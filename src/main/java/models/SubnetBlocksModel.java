@@ -9,10 +9,9 @@ import Exceptions.OptionExistException;
 import Exceptions.OptionNotExistException;
 import Exceptions.SubnetExistException;
 import Exceptions.SubnetNotExistException;
-import configuration.Configuration;
 import utils.FindItem;
 
-public class SubnetBlocksModel extends Configuration  {
+public class SubnetBlocksModel  {
 	@SerializedName("Subnets_List")
 	private List<SubnetBlockModel> subnetBlockList; 
 	
@@ -71,6 +70,18 @@ public class SubnetBlocksModel extends Configuration  {
 		subnetBlockList.remove(location);
 		
 	}
+	
+	public SubnetBlockModel getSubnet(String IP4) {
+		//Check of subnet is not found
+		if ( ! FindItem.elementExist(subnetBlockList,IP4)) {
+			throw new SubnetNotExistException();
+		}
+		SubnetBlockModel sb;
+		int location = FindItem.getLocation(subnetBlockList,IP4);
+		sb = subnetBlockList.get(location);
+		return sb;
+	}
+	
 	
 	public void addSubnetOption(String IP4, String name, String value) {
 		//Check of subnet is not found

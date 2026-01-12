@@ -1,16 +1,9 @@
 import java.io.IOException;
 
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.tree.*;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import edu.aast.cndc.dhcpparser.iscdhcpLexer;
-import edu.aast.cndc.dhcpparser.iscdhcpParser;
-import listeners.DHCPFilerLoader;
+import configuration.DHCPConfigurationParser;
 import models.DHCPConfig;
 
 public class Starter {
@@ -21,47 +14,21 @@ public class Starter {
 	private static String json;
 	
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		System.out.println("Starting parsing DHCP");
-		config = new DHCPConfig();
 		
-		//Read the input file content
-		CharStream input = CharStreams.fromFileName(filename);
-		
-		// create a lexer that feeds off of input CharStream
-		iscdhcpLexer lexer = new iscdhcpLexer(input);
-		
-		// create a buffer of tokens pulled from the lexer
-		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		
-		iscdhcpParser parser = new iscdhcpParser(tokens);
-		
-		//Call to the new parser with listener
-		ParseTreeWalker walker = new ParseTreeWalker();
-		DHCPFilerLoader loader = new DHCPFilerLoader(config);
-		ParseTree tree = parser.config();
-		
-		walker.walk(loader, tree	);
-		config = loader.getConfig();
+		config = DHCPConfigurationParser.parseDHCP(filename, new DHCPConfig());
 		
 		//Start map DHCPConfig object to json
-		Gson gson = new  GsonBuilder().setPrettyPrinting().create();
+		//I used disableHTMLEscaping to avoid converting the strig to unicodes
+		Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 		json = gson.toJson(config);
 		System.out.println(json);
-
-		//System.out.println(tree.toStringTree(parser)); 
-		
-		//Call to the original parse
-		/*
-		 * 
-		// create a parser that feeds off the tokens buffer
-		
-		
-		
-		ParseTree tree = parser.config(); // begin parsing at init rule
-		//System.out.println(tree.toStringTree(parser)); // print LISP-style tree
-		*/
-		
+	
 	}
-
 }
+/*
+ * To add a new rule
+ * 	1-Add the rule in the .g4 file
+ *  2-Maven -> Generate sources
+ *  3-In listeners, in the DHCPFilerLoader, add the missed overloaded method
+ *  4-To accomplish you may need to add a model
+ */
