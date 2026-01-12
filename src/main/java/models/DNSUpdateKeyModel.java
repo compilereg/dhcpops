@@ -1,6 +1,6 @@
 package models;
 
-public class DNSUpdateKey {
+public class DNSUpdateKeyModel {
 	private String KeyName;
 	private String Alg;
 	private String Secret;

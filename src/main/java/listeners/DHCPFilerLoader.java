@@ -32,9 +32,9 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionSubnetMaskDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.RangeDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.SharedNetBlockDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.SharednetblockContext;
-import edu.aast.cndc.dhcpparser.iscdhcpParser.SubnetBlockDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.SubnetblockContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.UpdateStaticLeasesDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.ZoneBlockDirectiveContext;
 import models.DHCPConfig;
 import models.HostBasicInfoModel;
 import models.SubnetBlockModel;
@@ -170,6 +170,25 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	}
 	
 	
+	/* 
+	 * Start the zone :-)
+	 */
+
+	@Override
+	public void enterZoneBlockDirective(ZoneBlockDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterZoneBlockDirective(ctx);
+		this.config.getZonesLis().addZone(ctx.getChild(1).getText(), ctx.getChild(4).getText(), ctx.getChild(7).getText());
+	}
+	
+	
+	/*
+	 * End the zone
+	 * 
+	 */
+	
+	
+	
 	/*
 	 * Start the key :-)
 	 */
@@ -192,8 +211,6 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	/*
 	 * Start the subnet 
 	 */
-
-	
 
 	@Override
 	public void enterSubnetblock(SubnetblockContext ctx) {

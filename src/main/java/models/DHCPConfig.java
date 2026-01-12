@@ -19,7 +19,9 @@ public class DHCPConfig {
 	@SerializedName("Includes")
 	private IncludesModel IncludeFilesList;		//Done	
 	@SerializedName("DNSUpdateKey")
-	private DNSUpdateKey dnsUpdateKey;
+	private DNSUpdateKeyModel dnsUpdateKey;		//Done
+	@SerializedName("ZoneInfo")
+	private ZonesModel zonesLis;
 	
 	public void createObjs() {
 		
@@ -29,8 +31,8 @@ public class DHCPConfig {
 		this.OptionsList = new OptionsModel();
 		this.DDNSOptionList = new DDNSOptionsModel();
 		this.IncludeFilesList = new IncludesModel();
-		this.dnsUpdateKey = new DNSUpdateKey();
-		
+		this.dnsUpdateKey = new DNSUpdateKeyModel();
+		this.zonesLis = new ZonesModel();
 	}
 	
 	public DHCPConfig() {
@@ -45,9 +47,22 @@ public class DHCPConfig {
 
 
 	//All getters and Setters
+	
+	
+	
+	
+	
 	public DirectivesModel getDirectiveList() {
 		return DirectiveList;
 	}
+	public ZonesModel getZonesLis() {
+		return zonesLis;
+	}
+
+	public void setZonesLis(ZonesModel zonesLis) {
+		this.zonesLis = zonesLis;
+	}
+
 	public void setDirectiveList(DirectivesModel DirectiveList) {
 		this.DirectiveList = DirectiveList;
 	}
@@ -57,11 +72,11 @@ public class DHCPConfig {
 	public void setHostBlockList(HostBlocksModel HostBlockList) {
 		this.HostBlockList = HostBlockList;
 	}
-	public DNSUpdateKey getDnsUpdateKey() {
+	public DNSUpdateKeyModel getDnsUpdateKey() {
 		return dnsUpdateKey;
 	}
 
-	public void setDnsUpdateKey(DNSUpdateKey dnsUpdateKey) {
+	public void setDnsUpdateKey(DNSUpdateKeyModel dnsUpdateKey) {
 		this.dnsUpdateKey = dnsUpdateKey;
 	}
 

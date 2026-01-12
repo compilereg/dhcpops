@@ -23,7 +23,7 @@
 
 
     //Start the main directives
-    config: { startFile(); } (serverconfline | commonconfline | confblock | keyblock)+ EOF {   finishFile();}                      # DHCPConfig    
+    config: { startFile(); } (serverconfline | commonconfline | confblock | keyblock | zoneblock)+ EOF {   finishFile();}                      # DHCPConfig    
         ;
 
     serverconfline: SINGLEDIRECTIVE';'                                              # AuthoritativeDirective
@@ -37,13 +37,13 @@
                   | 'ddns-update-style' UPDATESTYLES';'                             # DDNSUpdateStyleDirective
                     ;
 
-    commonconfline: 'ddns-domainname' DOMAINNAME';'                                 # DDNSDomainNameDirective           
+    commonconfline: 'ddns-domainname' QUOTEDDOMAINNAME';'                                 # DDNSDomainNameDirective           
                   | 'ddns-hostname' QUOTEDHOSTNAME';'                               # DDNSHostNameDirective    
-                  | 'ddns-rev-domainname' REVDOMAINNAME';'                          # DDNSRevDomainNameDirective
-                  | 'option domain-name' DOMAINNAME';'                              # OptionDomainNameDirective   
+                  | 'ddns-rev-domainname' QUOTEDREVDOMAINNAME';'                          # DDNSRevDomainNameDirective
+                  | 'option domain-name' QUOTEDDOMAINNAME';'                              # OptionDomainNameDirective   
                   | 'option domain-name-servers' (IP4 (',' IP4)*)';'                # OptionDomainNameServersDirective
                   | 'option routers' IP4';'                                         # OptionRoutersDirective    
-                  | 'option domain-search' (DOMAINNAME (',' DOMAINNAME)*)';'        # OptionDomainSearchDirective
+                  | 'option domain-search' (QUOTEDDOMAINNAME (',' QUOTEDDOMAINNAME)*)';'        # OptionDomainSearchDirective
                   ;
 
     confblock: hostblock                                                            # HostBlockDirective                                                                               
@@ -56,7 +56,11 @@
                 'secret' SECRET';'                                 
             '};'                                                                    # KeyBlockDirective
             ;                                                                      
-
+    zoneblock: 'zone' (DOMAINNAME|REVDOMAINNAME) '{'                                                    
+                'primary' IP4';'                                 
+                'key' HOSTNAME';'                                 
+            '}'                                                                    # ZoneBlockDirective
+            ;               
     sharednetblock: 'shared-network' HOSTNAME '{' subnetblock+  '}';                                                   
 
     subnetblock: 'subnet' IP4 'netmask' IP4 '{' subnetblockbody+  '}';              
@@ -78,8 +82,11 @@
     MACADDRESS: HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ;
     IP4 : OCTET'.'OCTET'.'OCTET'.'OCTET;
     NETMASK : OCTET'.'OCTET'.'OCTET'.'OCTET;
-    DOMAINNAME: '"'[a-zA-Z][a-zA-Z0-9-_]+('.'[a-zA-Z][a-zA-Z0-9-_]+)+'"';
-    REVDOMAINNAME: '"' [0-9]+('.'[0-9]+)+'.in-addr.arpa' '"';
+    REVDOMAINNAME: [0-9]+('.'[0-9]+)+'.in-addr.arpa';
+    QUOTEDREVDOMAINNAME: '"' [0-9]+('.'[0-9]+)+'.in-addr.arpa' '"';
+    DOMAINNAME: [a-zA-Z][a-zA-Z0-9-_]+('.'[a-zA-Z][a-zA-Z0-9-_]+)+;
+    QUOTEDDOMAINNAME: '"'[a-zA-Z][a-zA-Z0-9-_]+('.'[a-zA-Z][a-zA-Z0-9-_]+)+'"';
+    
     LOGFACILITY : ('warn' | 'crit' | 'err' | 'local'[0-9]);
     TIMEINSEC: [0-9]+;
     SINGLEDIRECTIVE: 'authoritative';
