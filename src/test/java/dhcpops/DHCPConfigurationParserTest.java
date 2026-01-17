@@ -28,7 +28,7 @@ class DHCPConfigurationParserTest {
 	@Order(1)
 	void GenerateJSONFromDHCPFile() {
 		assertDoesNotThrow ( () -> {
-			config = DHCPConfigurationOps.configToJSON(fileName, new DHCPConfig());
+			config = DHCPConfigurationOps.configToPOJO(fileName, new DHCPConfig());
 			//Start map DHCPConfig object to json
 			//I used disableHTMLEscaping to avoid converting the strig to unicodes
 			Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();

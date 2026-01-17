@@ -8,6 +8,9 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import edu.aast.cndc.dhcpparser.iscdhcpLexer;
 import edu.aast.cndc.dhcpparser.iscdhcpParser;
 import listeners.DHCPFilerLoader;
@@ -16,9 +19,8 @@ import models.DHCPConfig;
 public class DHCPConfigurationOps {
 
 	
-	public static DHCPConfig configToJSON(String filename,DHCPConfig config) {
-		
-		
+	public static DHCPConfig configToPOJO(String filename,DHCPConfig config) {
+
 		CharStream input;
 		try {
 			
@@ -43,7 +45,7 @@ public class DHCPConfigurationOps {
 			
 			//Recursively visit any file in the includeFilePathes in the loader listender
 			for (String includeFile: loader.getIncludeFilePathes()  )
-				config = configToJSON(includeFile,config);	
+				config = configToPOJO(includeFile,config);	
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -52,4 +54,20 @@ public class DHCPConfigurationOps {
 	
 		return config;
 	}
+	
+	
+	public static String configToJSON(String fileName) {
+
+		String json = null;
+		DHCPConfig config = DHCPConfigurationOps.configToPOJO(fileName, new DHCPConfig());
+		//Start map DHCPConfig object to json
+		//I used disableHTMLEscaping to avoid converting the strig to unicodes
+		Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+		json = gson.toJson(config);
+	
+		return json;
+	
+	}
+	
+	
 }
