@@ -11,7 +11,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import configuration.DHCPConfigurationParser;
+import configuration.DHCPConfigurationOps;
 import models.DHCPConfig;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -28,7 +28,7 @@ class DHCPConfigurationParserTest {
 	@Order(1)
 	void GenerateJSONFromDHCPFile() {
 		assertDoesNotThrow ( () -> {
-			config = DHCPConfigurationParser.parseDHCP(fileName, new DHCPConfig());
+			config = DHCPConfigurationOps.configToJSON(fileName, new DHCPConfig());
 			//Start map DHCPConfig object to json
 			//I used disableHTMLEscaping to avoid converting the strig to unicodes
 			Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();

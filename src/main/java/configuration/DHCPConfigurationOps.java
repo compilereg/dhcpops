@@ -13,10 +13,10 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser;
 import listeners.DHCPFilerLoader;
 import models.DHCPConfig;
 
-public class DHCPConfigurationParser {
+public class DHCPConfigurationOps {
 
 	
-	public static DHCPConfig parseDHCP(String filename,DHCPConfig config) {
+	public static DHCPConfig configToJSON(String filename,DHCPConfig config) {
 		
 		
 		CharStream input;
@@ -43,7 +43,7 @@ public class DHCPConfigurationParser {
 			
 			//Recursively visit any file in the includeFilePathes in the loader listender
 			for (String includeFile: loader.getIncludeFilePathes()  )
-				config = parseDHCP(includeFile,config);	
+				config = configToJSON(includeFile,config);	
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
