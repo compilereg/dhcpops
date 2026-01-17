@@ -83,7 +83,7 @@ class DHCPConfigTest {
 			json = gson.toJson(config);
 		});
 		
-		System.out.println(json);
+	//	System.out.println(json);
 			
 	}
 

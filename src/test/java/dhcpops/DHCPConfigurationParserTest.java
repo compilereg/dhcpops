@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import Exceptions.HostNameNotFoundException;
+import Exceptions.SubnetNotExistException;
 import configuration.DHCPConfigurationOps;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -30,7 +31,7 @@ class DHCPConfigurationParserTest {
 		assertDoesNotThrow ( () -> {
 				//Use the create DHCP Object and return the JSON
 				json = config.getJSON();
-				System.out.println(json);
+				//System.out.println(json);
 		});
 
 	}
@@ -56,11 +57,32 @@ class DHCPConfigurationParserTest {
 	
 
 	@Test
-	@Order(3)
+	@Order(4)
 	void searchForExistHost() {
 		//2-Search for non existing host
 		assertDoesNotThrow(() -> {
 	           config.isExistHostname("team1001");
+	        });	
+	}
+
+	
+	
+	@Test
+	@Order(5)
+	void searchForNotExistSubnet() {
+		//2-Search for non existing host, throw exception
+		assertThrows(SubnetNotExistException.class,() -> {
+	           config.isExistSubnet("10.0.3.0");
+	        });	
+	}
+
+
+	@Test
+	@Order(6)
+	void searchForExistSubnetInNetwork() {
+		//2-Search for non existing host
+		assertDoesNotThrow(() -> {
+	           config.isExistSubnet("lan","10.0.3.0");
 	        });	
 	}
 

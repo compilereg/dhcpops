@@ -1,6 +1,7 @@
 package configuration;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -17,6 +18,9 @@ import edu.aast.cndc.dhcpparser.iscdhcpLexer;
 import edu.aast.cndc.dhcpparser.iscdhcpParser;
 import listeners.DHCPFilerLoader;
 import models.DHCPConfig;
+import models.SubnetBlockModel;
+import Exceptions.SharedNetworkNameNotExistException;
+import Exceptions.SubnetNotExistException;
 
 public class DHCPConfigurationOps {
 	
@@ -41,14 +45,30 @@ public class DHCPConfigurationOps {
 		 try 
 		 {
 			 config.getSubnetBlockList().getSubnet(IP4);
-		 } catch (ZoneNotExistException e) {
-			 	throw e;
+		 } catch (SubnetNotExistException e) {
+			 	throw new SubnetNotExistException(e + " for subnet " + IP4);
 		 }
 		 
 		 return true;
 		 
 	 }
 	 
+	 public boolean isExistSubnet(String NetworkName, String IP4 ) {
+		 
+		 try 
+		 {
+			 if ( config.getSharedNetwork().getNetworkName().equals(NetworkName) )
+				 	config.getSharedNetwork().getSubnet(IP4);
+			 else
+				 throw new SharedNetworkNameNotExistException("Shared network does not exist" + NetworkName);
+			 
+		 } catch (SubnetNotExistException e) {
+			 	throw new SubnetNotExistException(e + " for subnet " + IP4);
+		 }
+		 
+		 return true;
+		 
+	 }
 	 
 	 public DHCPConfigurationOps(String fileName) {
 		 config = this.configToPOJO(fileName, new DHCPConfig());

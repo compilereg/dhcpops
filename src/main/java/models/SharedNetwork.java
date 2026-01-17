@@ -3,6 +3,8 @@ package models;
 import com.google.gson.annotations.SerializedName;
 
 public class SharedNetwork extends SubnetBlocksModel {
+
+
 	@SerializedName("Name")
 	private String NetworkName;
 
