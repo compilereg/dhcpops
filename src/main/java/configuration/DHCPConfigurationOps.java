@@ -17,9 +17,40 @@ import listeners.DHCPFilerLoader;
 import models.DHCPConfig;
 
 public class DHCPConfigurationOps {
+	
+	 private DHCPConfig config;
+	 
+	 public DHCPConfigurationOps(String fileName) {
+		 config = this.configToPOJO(fileName, new DHCPConfig());
+	 }
+	 
+	public DHCPConfig getConfig() {
+		return config;
+	}
+
+	public void setConfig(DHCPConfig config) {
+		 this.config = config;
+	 }
+	
+	
 
 	
-	public static DHCPConfig configToPOJO(String filename,DHCPConfig config) {
+	//Method parses dhcp to JSON string 
+	public String getJSON() {
+
+		String json = null;
+		//Start map DHCPConfig object to json
+		//I used disableHTMLEscaping to avoid converting the strig to unicodes
+		Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+		json = gson.toJson(config);
+	
+		return json;
+	
+	}
+
+	
+	//Method parses a dhcp file, and return POJOs
+	public DHCPConfig configToPOJO(String filename,DHCPConfig config) {
 
 		CharStream input;
 		try {
@@ -53,21 +84,6 @@ public class DHCPConfigurationOps {
 		}
 	
 		return config;
-	}
-	
-	
-	public static String configToJSON(String fileName) {
-
-		String json = null;
-		DHCPConfig config = DHCPConfigurationOps.configToPOJO(fileName, new DHCPConfig());
-		//Start map DHCPConfig object to json
-		//I used disableHTMLEscaping to avoid converting the strig to unicodes
-		Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
-		json = gson.toJson(config);
-	
-		return json;
-	
-	}
-	
+	}	
 	
 }

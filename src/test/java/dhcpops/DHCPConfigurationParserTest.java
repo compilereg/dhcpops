@@ -17,30 +17,34 @@ import models.DHCPConfig;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DHCPConfigurationParserTest {
 	private static String fileName="config/dhcpd.conf";
-	private static DHCPConfig config;
+	private static DHCPConfigurationOps config;
 	private static String json;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		//Create a DHCPConfigurationOps from existing config files
+		config = new DHCPConfigurationOps(fileName);
 	}
 	
 	@Test
 	@Order(1)
-	void GenerateJSONFromDHCPFile() {
+	void GenerateJSONFromDHCP() {
 		assertDoesNotThrow ( () -> {
-			config = DHCPConfigurationOps.configToPOJO(fileName, new DHCPConfig());
-			//Start map DHCPConfig object to json
-			//I used disableHTMLEscaping to avoid converting the strig to unicodes
-			Gson gson = new  GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
-			json = gson.toJson(config);
-			System.out.println(json);
+				//Use the create DHCP Object and return the JSON
+				json = config.getJSON();
+				System.out.println(json);
 		});
-		
 
-		
-		
-		
-		
+	}
+
+	@Test
+	@Order(2)
+	void GeneratePOJOFromDHCP() {
+		assertDoesNotThrow ( () -> {
+			//Use the created DHCP Object and return the POJO
+			config.getConfig();
+		});
+
 	}
 
 }
