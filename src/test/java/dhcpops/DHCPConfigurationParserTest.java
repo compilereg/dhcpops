@@ -1,6 +1,7 @@
 package dhcpops;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
@@ -8,11 +9,8 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
+import Exceptions.HostNameNotFoundException;
 import configuration.DHCPConfigurationOps;
-import models.DHCPConfig;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DHCPConfigurationParserTest {
@@ -46,5 +44,25 @@ class DHCPConfigurationParserTest {
 		});
 
 	}
+	
+	@Test
+	@Order(3)
+	void searchForNotExistHost() {
+		//2-Search for non existing host, throw exception
+		assertThrows(HostNameNotFoundException.class,() -> {
+	           config.isExistHostname("nonexist");
+	        });	
+	}
+	
+
+	@Test
+	@Order(3)
+	void searchForExistHost() {
+		//2-Search for non existing host
+		assertDoesNotThrow(() -> {
+	           config.isExistHostname("team1001");
+	        });	
+	}
+
 
 }

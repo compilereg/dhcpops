@@ -11,6 +11,8 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import Exceptions.HostNameNotFoundException;
+import Exceptions.ZoneNotExistException;
 import edu.aast.cndc.dhcpparser.iscdhcpLexer;
 import edu.aast.cndc.dhcpparser.iscdhcpParser;
 import listeners.DHCPFilerLoader;
@@ -19,6 +21,34 @@ import models.DHCPConfig;
 public class DHCPConfigurationOps {
 	
 	 private DHCPConfig config;
+
+	 
+	 public boolean isExistHostname(String hostName ) {
+		 
+		 try 
+		 {
+			 config.getHostBlockList().getHost(hostName);
+		 } catch (HostNameNotFoundException e) {
+			 	throw e;
+		 }
+		 
+		 return true;
+		 
+	 }
+	 
+	 public boolean isExistSubnet(String IP4 ) {
+		 
+		 try 
+		 {
+			 config.getSubnetBlockList().getSubnet(IP4);
+		 } catch (ZoneNotExistException e) {
+			 	throw e;
+		 }
+		 
+		 return true;
+		 
+	 }
+	 
 	 
 	 public DHCPConfigurationOps(String fileName) {
 		 config = this.configToPOJO(fileName, new DHCPConfig());
@@ -31,9 +61,6 @@ public class DHCPConfigurationOps {
 	public void setConfig(DHCPConfig config) {
 		 this.config = config;
 	 }
-	
-	
-
 	
 	//Method parses dhcp to JSON string 
 	public String getJSON() {
