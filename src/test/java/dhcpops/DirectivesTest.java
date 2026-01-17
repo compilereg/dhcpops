@@ -1,4 +1,4 @@
-package dhcpparser;
+package dhcpops;
 
 import static org.junit.jupiter.api.Assertions.*;
 
