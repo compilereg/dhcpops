@@ -22,12 +22,9 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser;
 import listeners.DHCPFilerLoader;
 import models.DDNSOptionsModel;
 import models.DHCPConfig;
-import models.DirectivesModel;
 import models.HostBasicInfoModel;
-import models.HostBlocksModel;
 import models.OptionsModel;
 import models.SubnetBlockModel;
-import models.SubnetBlocksModel;
 import models.ZoneModel;
 
 public class DHCPConfigurationOps {

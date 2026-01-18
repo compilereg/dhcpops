@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import com.google.gson.annotations.SerializedName;
 
-import Exceptions.DirectiveExistException;
 import Exceptions.DirectiveNotExistException;
 
 
