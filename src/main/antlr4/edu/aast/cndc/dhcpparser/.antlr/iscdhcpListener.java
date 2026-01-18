@@ -1,4 +1,4 @@
-// Generated from /home/compiler/git/dhcpparser-dev/src/main/antlr4/edu/aast/cndc/dhcpparser/iscdhcp.g4 by ANTLR 4.13.1
+// Generated from /home/compiler/git/dhcpops/src/main/antlr4/edu/aast/cndc/dhcpparser/iscdhcp.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -246,6 +246,30 @@ public interface iscdhcpListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSharedNetBlockDirective(iscdhcpParser.SharedNetBlockDirectiveContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code KeyBlockDirective}
+	 * labeled alternative in {@link iscdhcpParser#keyblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterKeyBlockDirective(iscdhcpParser.KeyBlockDirectiveContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code KeyBlockDirective}
+	 * labeled alternative in {@link iscdhcpParser#keyblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitKeyBlockDirective(iscdhcpParser.KeyBlockDirectiveContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code ZoneBlockDirective}
+	 * labeled alternative in {@link iscdhcpParser#zoneblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterZoneBlockDirective(iscdhcpParser.ZoneBlockDirectiveContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code ZoneBlockDirective}
+	 * labeled alternative in {@link iscdhcpParser#zoneblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitZoneBlockDirective(iscdhcpParser.ZoneBlockDirectiveContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link iscdhcpParser#sharednetblock}.
 	 * @param ctx the parse tree

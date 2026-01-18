@@ -13,6 +13,7 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser.DDNSUpdateStyleDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DDNSUpdatesDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DHCPConfigContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.DefaultLeaseTimeDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.FilenameDirectiveCommonContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.FilenameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.FixedAddressDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.HardwareEthernetDirectiveContext;
@@ -23,6 +24,8 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser.KeyBlockDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.LogFacilityDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.MaxLeaseTimeDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.NextServerDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionArchDirectiveContext;
+import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionArchIfContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameServersDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainSearchDirectiveContext;
@@ -51,6 +54,32 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	private String sharenetwork_name;
 	private String subnet_ip;
 	
+	
+	@Override
+	public void enterOptionArchIf(OptionArchIfContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterOptionArchIf(ctx);
+		
+		System.out.println("Inside if directive");
+		
+		for(int i=0;i<ctx.getChildCount();i++) 
+			System.out.println(ctx.getChild(i).getText());
+	}
+
+	@Override
+	public void enterOptionArchDirective(OptionArchDirectiveContext ctx) {
+		// TODO Auto-generated method stub
+		super.enterOptionArchDirective(ctx);
+		
+		String optionValue="";
+		
+		for(int i=3;i<ctx.getChildCount()-1;i++)	
+			optionValue = optionValue + " " + ctx.getChild(i).getText();
+		
+		String optionName=ctx.getChild(1).getText() +" " + ctx.getChild(2).getText();
+		processOption(optionName, optionValue);
+	}
+
 	//Used to store the incudeFiles which will be recursivly visited from the caller
 	private List<String> includeFilePathes;
 	

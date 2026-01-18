@@ -29,8 +29,8 @@
     serverconfline: SINGLEDIRECTIVE';'                                              # AuthoritativeDirective
                   | 'allow' ('booting'|'bootp')';'                                  # AllowBootingDirective 
                   | 'update-static-leases' ONOFFSWITCH';'                           # UpdateStaticLeasesDirective  
-                  | 'default-lease-time' TIMEINSEC';'                               # DefaultLeaseTimeDirective    
-                  | 'max-lease-time' TIMEINSEC';'                                   # MaxLeaseTimeDirective   
+                  | 'default-lease-time' POSTIVENUMBER';'                               # DefaultLeaseTimeDirective    
+                  | 'max-lease-time' POSTIVENUMBER';'                                   # MaxLeaseTimeDirective   
                   | 'log-facility' LOGFACILITY';'                                   # LogFacilityDirective
                   | 'include' FILEPATH';'                                           # IncludeDirective  
                   | 'ddns-updates' ONOFFSWITCH';'                                   # DDNSUpdatesDirective 
@@ -44,7 +44,13 @@
                   | 'option domain-name-servers' (IP4 (',' IP4)*)';'                # OptionDomainNameServersDirective
                   | 'option routers' IP4';'                                         # OptionRoutersDirective    
                   | 'option domain-search' (QUOTEDDOMAINNAME (',' QUOTEDDOMAINNAME)*)';'        # OptionDomainSearchDirective
+                  | 'filename' FILEPATH';'                                         # FilenameDirectiveCommon    
+                  | 'option'  'arch' 'code' POSTIVENUMBER '=' TYPE ('16'|'32') ';'      # OptionArchDirective
+                  | if                                                          # IfOnlyDirective
                   ;
+
+    if: 'if' 'option' ('arch' | 'code') '=' ARCHTYPE '{' commonconfline+  '}' 'else' '{' commonconfline+  '}' #OptionArchIf  
+      ;            
 
     confblock: hostblock                                                            # HostBlockDirective                                                                               
              | subnetblock                                                          # SubnetBlockDirective    
@@ -79,6 +85,8 @@
                   ;
 
     // Start the tokens here  
+    ARCHTYPE: '00:'('00'|'06'|'07'|'09'|'0A');
+    TYPE: ('string' | 'boolean' | 'ip-address' | 'ip-addresses' | 'unsigned integer' | 'unsigned-integers' | 'integer' | 'integers' | 'octet' | 'octets' );
     MACADDRESS: HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ':' HEX HEX ;
     IP4 : OCTET'.'OCTET'.'OCTET'.'OCTET;
     NETMASK : OCTET'.'OCTET'.'OCTET'.'OCTET;
@@ -88,7 +96,7 @@
     QUOTEDDOMAINNAME: '"'[a-zA-Z][a-zA-Z0-9-_]+('.'[a-zA-Z][a-zA-Z0-9-_]+)+'"';
     
     LOGFACILITY : ('warn' | 'crit' | 'err' | 'local'[0-9]);
-    TIMEINSEC: [0-9]+;
+    POSTIVENUMBER: [0-9]+;
     SINGLEDIRECTIVE: 'authoritative';
     UPDATESTYLES: ('interim'|'none'|'standard'|'ad-hoc');
     ONOFFSWITCH: ('on'|'off');

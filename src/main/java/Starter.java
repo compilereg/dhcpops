@@ -34,4 +34,7 @@ public class Starter {
  *  2-Maven -> Generate sources
  *  3-In listeners, in the DHCPFilerLoader, add the missed overloaded method
  *  4-To accomplish you may need to add a model
+ *  
+ *  -------------------------
+ * Fill the POJO with if directives, and generate it in the save methods
  */
