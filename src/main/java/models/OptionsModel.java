@@ -15,6 +15,10 @@ public class OptionsModel {
 	private HashMap<String,String> options;
 	//private List<OptionModel> options;
 	
+	public int getSize() {
+		return options.size();
+	}
+	
 	public OptionsModel() {
 		options = new HashMap<>();
 	}

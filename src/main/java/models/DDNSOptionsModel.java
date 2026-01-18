@@ -13,6 +13,10 @@ public class DDNSOptionsModel {
 	@SerializedName("DDNSOptions_List")
 	private HashMap<String,String> ddnsoptions;
 	
+	public int getSize() {
+		return ddnsoptions.size();
+	}
+	
 	public void setDdnsoptions(HashMap<String,String> ddnsoptions) {
 		this.ddnsoptions = ddnsoptions;
 	}

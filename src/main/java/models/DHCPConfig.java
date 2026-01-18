@@ -21,7 +21,7 @@ public class DHCPConfig {
 	@SerializedName("DNSUpdateKey")
 	private DNSUpdateKeyModel dnsUpdateKey;		//Done
 	@SerializedName("ZoneInfo")
-	private ZonesModel zonesLis;
+	private ZonesModel zonesLis;				//Done
 	
 	public void createObjs() {
 		

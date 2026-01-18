@@ -85,6 +85,13 @@ class DHCPConfigurationParserTest {
 	           config.isExistSubnet("lan","10.0.3.0");
 	        });	
 	}
+	
+	@Test
+	@Order(7) 
+	void saveConfigToFileTest() {
+		assertDoesNotThrow(() -> config.writeConfig("/testconfig/dhcpd.conf")
+		);
+	}
 
 
 }

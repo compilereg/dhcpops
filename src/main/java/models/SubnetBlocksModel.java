@@ -15,6 +15,10 @@ public class SubnetBlocksModel  {
 	@SerializedName("Subnets_List")
 	private List<SubnetBlockModel> subnetBlockList; 
 	
+	public int getSize() {
+		return this.subnetBlockList.size();
+	}
+	
 	public SubnetBlocksModel() {
 		subnetBlockList = new ArrayList<>();
 	}

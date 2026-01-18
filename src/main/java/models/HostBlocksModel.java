@@ -20,6 +20,10 @@ public class HostBlocksModel  {
 	@SerializedName("Hosts_List")
 	private List<HostBasicInfoModel> hostBlockList;
 	
+	public int getSize() {
+		return hostBlockList.size();
+	}
+	
 	public HostBlocksModel() {
 		hostBlockList = new ArrayList<>();
 	}

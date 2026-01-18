@@ -8,6 +8,10 @@ import Exceptions.ZoneNotExistException;
 public class ZonesModel {
 	private HashMap<String, ZoneModel> ZonesList;
 	
+	public  int getSize() {
+		return this.ZonesList.size();
+	}
+	
 	public ZonesModel() {
 		this.ZonesList = new HashMap<>();
 	}
