@@ -25,7 +25,6 @@ import edu.aast.cndc.dhcpparser.iscdhcpParser.LogFacilityDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.MaxLeaseTimeDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.NextServerDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionArchDirectiveContext;
-import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionArchIfContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainNameServersDirectiveContext;
 import edu.aast.cndc.dhcpparser.iscdhcpParser.OptionDomainSearchDirectiveContext;
@@ -54,17 +53,7 @@ public class DHCPFilerLoader extends iscdhcpBaseListener  {
 	private String sharenetwork_name;
 	private String subnet_ip;
 	
-	
-	@Override
-	public void enterOptionArchIf(OptionArchIfContext ctx) {
-		// TODO Auto-generated method stub
-		super.enterOptionArchIf(ctx);
-		
-		System.out.println("Inside if directive");
-		
-		for(int i=0;i<ctx.getChildCount();i++) 
-			System.out.println(ctx.getChild(i).getText());
-	}
+
 
 	@Override
 	public void enterOptionArchDirective(OptionArchDirectiveContext ctx) {

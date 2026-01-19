@@ -49,8 +49,20 @@
                   | if                                                          # IfOnlyDirective
                   ;
 
-    if: 'if' 'option' ('arch' | 'code') '=' ARCHTYPE '{' commonconfline+  '}' 'else' '{' commonconfline+  '}' #OptionArchIf  
-      ;            
+    if: 'if' ifcondition '{' iftrueblocks+ '}' ('else' '{' ifelseblocks+  '}')?               #IfConditionBlock
+      ;
+
+    ifcondition: 'option' ('arch' | 'code') '=' ARCHTYPE                      #IfConditionArch
+               ;
+
+    iftrueblocks: commonconfline                                        #IfTrueCommonConfLine
+                 | confblock                                             #IfTrueConfBlock
+                ;
+
+    ifelseblocks: commonconfline                                       #IfElseCommonConfLine
+                 | confblock                                            #IfElseConfBlock
+                ;
+
 
     confblock: hostblock                                                            # HostBlockDirective                                                                               
              | subnetblock                                                          # SubnetBlockDirective    
